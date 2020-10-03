@@ -37,8 +37,8 @@ const uint64_t DIFFICULTY_TARGET                              = 120; // seconds
 const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER                    = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                 = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                         = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX        = 0x14820c;
-const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW           = 60;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX        = 0x9825b;
+const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW           = 10;
 const size_t   CRYPTONOTE_TX_SPENDABLE_AGE                    = 10;
 const size_t   CRYPTONOTE_SAFE_TX_SPENDABLE_AGE               = 1;
 
@@ -49,7 +49,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW              = 60;
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V1           = 11;                     //5.0
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                   = (uint64_t)(-1);
+const uint64_t MONEY_SUPPLY                                   = (uint64_t)(75000000000000000);
 const uint64_t COIN                                           = 100000000;
 const uint64_t TAIL_EMISSION_REWARD                           = 1000000000; // 10 Coins
 const size_t CRYPTONOTE_COIN_VERSION                          = 1;
@@ -170,9 +170,9 @@ const uint32_t GOVERNANCE_HEIGHT_END                         = 4000000;
 
 } // namespace parameters
 
-const char     CRYPTONOTE_NAME[]                             = "Qwertycoin";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "013c01ff0001ffffffffffff07029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101eddf1e272c1ffa70f49ca4eaad918578bc3b59689e53e48a1bc670fbdea08478";
-const char     DNS_CHECKPOINTS_HOST[]                        = "checkpoints.qwertycoin.org";
+const char     CRYPTONOTE_NAME[]                             = "Diamoneum";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001c4918df49404029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b553f7a21b637cde0b73901345b8394a99dda206e02a1c860ed2abf637d0f6fd";
+const char     DNS_CHECKPOINTS_HOST[]                        = "checkpoints.diamoneum.xyz";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -192,8 +192,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000; // by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  128; // by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  8196;
-const int      RPC_DEFAULT_PORT                              =  8197;
+const int      P2P_DEFAULT_PORT                              =  57575;
+const int      RPC_DEFAULT_PORT                              =  57576;
 const int      SERVICE_DEFAULT_PORT                          =  8198;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
@@ -238,15 +238,8 @@ const std::string GOVERNANCE_WALLET_ADDRESS                  = "QWC1W9dWEf955q71
 const std::string GOVERNANCE_VIEW_SECRET_KEY                 = "d6c03cec7de78fe30895bf19edeb5c24529c3d2e40d00b300fa2336c6fdafe0d";
 
 const char *const SEED_NODES[] = {
-    "88.99.85.223:8196",//00
-    "node-01.qwertycoin.org:8196",
-    "node-02.qwertycoin.org:8196",
-    "node-03.qwertycoin.org:8196",
-    "node-04.qwertycoin.org:8196",
-    "node-05.qwertycoin.org:8196",//exp
-    "94.130.187.117:8196", //06
-    "116.203.51.103:8196",//07
-    "148.251.115.233:8196"
+    "68.183.47.35:57575",
+    "165.232.102.130:57575"
 };
 
 } // namespace CryptoNote
