@@ -49,7 +49,7 @@ If you would like to compile yourself, read on.
 <tr><td>P2P | RPC Port</td><td>57575 | 57576</td></tr>
 </table>
 
-More information at [qwertycoin.org](https://qwertycoin.org/)
+More information at [Diamoneum.xyz](https://diamoneum.xyz/)
 
 # How To Compile <a name="howtocompile"></a>
 
@@ -57,7 +57,7 @@ More information at [qwertycoin.org](https://qwertycoin.org/)
 
 ##### Prerequisites
 
-- You will need the following packages: build-essential, [cmake (3.10 or higher)](https://docs.qwertycoin.org/developer/compiling-from-source/untitled) and git;
+- You will need the following packages: build-essential, [cmake (3.10 or higher)](https://docs.diamoneum.xyz/developer/compiling-from-source/untitled) and git;
 - Most of these should already be installed on your system. For example on Ubuntu by running:
 ```
 sudo apt-get install build-essential cmake git
@@ -67,8 +67,8 @@ sudo apt-get install build-essential cmake git
 
 - After installing dependencies run simple script:
 ```
-git clone --recurse-submodules https://github.com/qwertycoin-org/qwertycoin
-cd ./qwertycoin
+git clone --recurse-submodules https://github.com/Diamoneum/Diamoneum.git
+cd ./Diamoneum
 mkdir ./build
 cd ./build
 cmake -DBUILD_ALL:BOOL=TRUE ..
@@ -89,8 +89,8 @@ cmake --build . --config Release
 - From the start menu, open "x64 Native Tools Command Prompt for vs2017";
 - And the run the following commands:
 ```
-git clone https://github.com/qwertycoin-org/qwertycoin
-cd qwertycoin
+git clone https://github.com/Diamoneum/Diamoneum.git
+cd Diamoneum
 md build
 cd build
 cmake -G "Visual Studio 15 2017 Win64" -DBUILD_ALL:BOOL=TRUE ..
@@ -111,8 +111,8 @@ cmake --build . --config Release
 
 - After installing dependencies run simple script:
 ```
-git clone https://github.com/qwertycoin-org/qwertycoin
-cd ./qwertycoin
+git clone https://github.com/Diamoneum/Diamoneum.git
+cd ./Diamoneum
 mkdir ./build
 cd ./build
 cmake -DBUILD_ALL:BOOL=TRUE ..
@@ -141,8 +141,8 @@ export ANDROID_NDK_r18b="$HOME/.android/android-ndk-r18b"
 
 - After installing dependencies run simple script:
 ```
-git clone https://github.com/qwertycoin-org/qwertycoin
-cd ./qwertycoin
+git clone https://github.com/Diamoneum/Diamoneum.git
+cd ./Diamoneum
 mkdir ./build
 cd ./build
 cmake -DCMAKE_TOOLCHAIN_FILE=cmake/polly/android-ndk-r18b-api-21-x86-clang-libcxx.cmake -DBUILD_ALL:BOOL=TRUE -DBUILD_WITH_TESTS:BOOL=FALSE -DSTATIC=ON -DBUILD_64=OFF -DANDROID=true -DBUILD_TAG="android" ..
@@ -164,8 +164,8 @@ sudo pkg install cmake git
 
 - After installing dependencies run simple script:
 ```
-git clone --recurse-submodules https://github.com/qwertycoin-org/qwertycoin
-cd ./qwertycoin
+git clone --recurse-submodules https://github.com/Diamoneum/Diamoneum.git
+cd ./Diamoneum
 mkdir ./build
 cd ./build
 cmake -DBUILD_ALL:BOOL=TRUE ..
@@ -176,7 +176,7 @@ cmake --build . --config Release
 ## Donate <a name="donate"></a>
 
 ```
-QWC: QWC1K6XEhCC1WsZzT9RRVpc1MLXXdHVKt2BUGSrsmkkXAvqh52sVnNc1pYmoF2TEXsAvZnyPaZu8MW3S8EWHNfAh7X2xa63P7Y
+DIAM: diamZCEMyoggGgngE7Sh8QAaQEvFPw8HXAj5SQh7sEwoEc3FsnSZwFZ9nMfRWVc6hFdjCASNGGxPnCeEt7WKbwYC1WCnXWheBV
 ```
 ```
 BTC: 1DkocMNiqFkbjhCmG4sg9zYQbi4YuguFWw
@@ -213,14 +213,14 @@ ETN: etnkJXJFqiH9FCt6Gq2HWHPeY92YFsmvKX7qaysvnV11M796Xmovo2nSu6EUCMnniqRqAhKX9AQ
 
 #### Thanks <a name="thanks"></a>
 
-Cryptonote Developers, Bytecoin Developers, Monero Developers, Karbo Developers, Qwertycoin Community
+Cryptonote Developers, Bytecoin Developers, Monero Developers, Karbo Developers, Qwertycoin Community, Diamoneum Community
 
 ### Copypasta for license when editing files  <a name="copypasta"></a>
 
-Hi Qwertycoin contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/config/CryptoNoteConfig.h](https://github.com/qwertycoin-org/qwertycoin/blob/master/src/config/CryptoNoteConfig.h) for an example.
+Hi Diamoneum contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/config/CryptoNoteConfig.h](https://github.com/qwertycoin-org/qwertycoin/blob/master/src/config/CryptoNoteConfig.h) for an example.
 
 ```
-# Copyright 2018-2020 (c) The Qwertycoin Group.
+# Copyright 2020-2020 (c) The Diamoneum Team.
 # Licensed under the GNU General Public License, Version 3.
 # See the file LICENSE from this package for details.
 ```
