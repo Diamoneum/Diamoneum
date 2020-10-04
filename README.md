@@ -28,25 +28,25 @@ If you would like to compile yourself, read on.
 ### Downloads <a name="downloads"></a>
 | Operating System   | Download                                 |
 | ----------------   | ---------------------------------------- |
-| Windows 32         | https://releases.qwertycoin.org/get/cli/latest/win32 |
-| Windows 64         | https://releases.qwertycoin.org/get/cli/latest/win64 |
-| macOS 10.8 & Later | https://releases.qwertycoin.org/get/cli/latest/macos |
-| Linux DEB          | https://releases.qwertycoin.org/get/cli/latest/linux/deb |
-| Linux RPM          | https://releases.qwertycoin.org/get/cli/latest/linux/rpm |
-| Android            | https://releases.qwertycoin.org/get/cli/latest/arm64 |
-| Other platforms    | https://releases.qwertycoin.org |
+| Windows 32         | https://releases.diamoneum.xyz/get/cli/latest/win32 |
+| Windows 64         | https://releases.diamoneum.xyz/get/cli/latest/win64 |
+| macOS 10.8 & Later | https://releases.diamoneum.xyz/get/cli/latest/macos |
+| Linux DEB          | https://releases.diamoneum.xyz/get/cli/latest/linux/deb |
+| Linux RPM          | https://releases.diamoneum.xyz/get/cli/latest/linux/rpm |
+| Android            | https://releases.diamoneum.xyz/get/cli/latest/arm64 |
+| Other platforms    | https://releases.diamoneum.xyz |
 
 ### Coin Specs <a name="coinspecs"></a>
 <table>
-<tr><td>Ticker Symbol</td><td>QWC</td></tr>
+<tr><td>Ticker Symbol</td><td>DIAM</td></tr>
 <tr><td>Algorithm</td><td>Cryptonight</td></tr>
 <tr><td>Type</td><td>Proof of Work (PoW)</td></tr>
 <tr><td>Block Time</td><td>120 Seconds</td></tr>
 <tr><td>Premine</td><td>0.0 %</td></tr>
 <tr><td>Decimals</td><td>8 Digits</td></tr>
 <tr><td>Block Reward</td><td>Decrease by each block</td></tr>
-<tr><td>Max Coin Supply </td><td>184,467,440,737 QWC</td></tr>
-<tr><td>P2P | RPC Port</td><td>8196 | 8197</td></tr>
+<tr><td>Max Coin Supply </td><td>750,000,000 DIAM</td></tr>
+<tr><td>P2P | RPC Port</td><td>57575 | 57576</td></tr>
 </table>
 
 More information at [qwertycoin.org](https://qwertycoin.org/)
