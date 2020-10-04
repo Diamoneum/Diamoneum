@@ -238,8 +238,8 @@ const std::string GOVERNANCE_WALLET_ADDRESS                  = "QWC1W9dWEf955q71
 const std::string GOVERNANCE_VIEW_SECRET_KEY                 = "d6c03cec7de78fe30895bf19edeb5c24529c3d2e40d00b300fa2336c6fdafe0d";
 
 const char *const SEED_NODES[] = {
-    "68.183.47.35:57575",
-    "165.232.102.130:57575"
+    "167.71.129.222:57575",
+    "167.71.139.255:57575"
 };
 
 } // namespace CryptoNote
