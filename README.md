@@ -9,19 +9,19 @@
 
 # Table of contents
 1. [Project Specs](#coinspecs)
-2. [How to Compile Qwertycoin](#howtocompile)
-    1. [Qwertycoin for Linux](#build-linux)
-    2. [Qwertycoin for Windows](#build-windows)
-    3. [Qwertycoin for macOS](#build-apple)
-    4. [Qwertycoin for Android](#build-android)
-    5. [Qwertycoin for FreeBSD](#build-freebsd)
+2. [How to Compile Diamoneum](#howtocompile)
+    1. [Diamoneum for Linux](#build-linux)
+    2. [Diamoneum for Windows](#build-windows)
+    3. [Diamoneum for macOS](#build-apple)
+    4. [Diamoneum for Android](#build-android)
+    5. [Diamoneum for FreeBSD](#build-freebsd)
 3. [Downloads](#downloads)
 4. [Useful Links](#usefullinks)
 5. [Donate & Thanks](#donate)
 6. [Copyright / License](#copypasta)
 
 ## Installing <a name="installing"></a>
-We offer binary images of the latest releases here: https://releases.qwertycoin.org
+We offer binary images of the latest releases here: https://releases.diamoneum.xyz
 
 If you would like to compile yourself, read on.
 
