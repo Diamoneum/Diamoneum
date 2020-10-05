@@ -224,8 +224,8 @@ const uint32_t P2P_IP_FAILS_BEFORE_BLOCK                     = 10;
 const uint32_t P2P_IDLE_CONNECTION_KILL_INTERVAL             = (5 * 60);      //5 minutes
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "deaddeadbeef04d37a9499c67ccb730dc4734950f414cdb332b28c5ce764beaf";
 
-const char        LATEST_VERSION_URL[]                       = "https://releases.qwertycoin.org";
-const std::string LICENSE_URL                                = "https://github.com/qwertycoin-org/qwertycoin/blob/master/LICENSE";
+const char        LATEST_VERSION_URL[]                       = "https://releases.diamoneum.xyz";
+const std::string LICENSE_URL                                = "https://github.com/Diamoneum/Diamoneum/blob/master/LICENSE.txt";
 
 /* Modules */
 
@@ -234,8 +234,8 @@ const bool     P2P_MESSAGES                                  =  true;
 const uint16_t P2P_MESSAGES_CHAR_COUNT                       =  160;
 
 /* Governance Fee Wallets // The Qwertycoin Foundation */
-const std::string GOVERNANCE_WALLET_ADDRESS                  = "QWC1W9dWEf955q711Qn2fsLbw8fDW1AixUqZQiMCcHhkB59CivmxLPdXXDhkL2yfJkMBKiVWg7hgT3dP5RC5r8Q15kCNADeJ7x";
-const std::string GOVERNANCE_VIEW_SECRET_KEY                 = "d6c03cec7de78fe30895bf19edeb5c24529c3d2e40d00b300fa2336c6fdafe0d";
+const std::string GOVERNANCE_WALLET_ADDRESS                  = "diammYLkJvEfLsFUxBdrfn9evqjjcRQYAhrvrBT73TFPjaaiUCGn67V5SLDrXA2yVV5oYV7HgAsfKGCHP9MVdD5x1ucB6hqdfW";
+const std::string GOVERNANCE_VIEW_SECRET_KEY                 = "4237f92077a8be057980f0552e40269aad26eb8d7a04f0d004fe0af24e94d205";
 
 const char *const SEED_NODES[] = {
     "167.71.129.222:57575",

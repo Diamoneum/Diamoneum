@@ -70,26 +70,21 @@ const uint8_t TX_EXTRA_PUBKEY_IDENTIFIER = 0x01;
 const uint8_t TX_EXTRA_NONCE_IDENTIFIER = 0x02;
 
 const std::string windowsAsciiArt =
-        "\n                                                              \n"
-        "                         _                   _                  \n"
-        "                        | |                 (_)                 \n"
-        "  __ ___      _____ _ __| |_ _   _  ___ ___  _ _ __             \n"
-        " / _` \\ \\ /\\ / / _ \\ '__| __| | | |/ __/ _ \\| | '_  \\     \n"
-        "| (_| |\\ V  V /  __/ |  | |_| |_| | (_| (_) | | | | |          \n"
-        " \\__, | \\_/\\_/ \\___|_|   \\__|\\__, |\\___\\___/|_|_| |_|   \n"
-        "    | |                       __/ |                             \n"
-        "    |_|                      |___/                              \n"
-        "                                                                \n";
+        "\n                                                	        \n"
+	"    ____  _                                                	\n"
+	"   / __ \(_)___ _____ ___  ____  ____  ___  __  ______ ___ 	\n"
+	"  / / / / / __ `/ __ `__ \/ __ \/ __ \/ _ \/ / / / __ `__ \	\n"
+	" / /_/ / / /_/ / / / / / / /_/ / / / /  __/ /_/ / / / / / /	\n"
+	"/_____/_/\__,_/_/ /_/ /_/\____/_/ /_/\___/\__,_/_/ /_/ /_/ 	\n"          
+        "                                                          	\n";
 
 const std::string nonWindowsAsciiArt =
-        "\n                                                                                 \n"
-        " ██████╗ ██╗    ██╗███████╗██████╗ ████████╗██╗   ██╗ ██████╗ ██████╗ ██╗███╗   ██╗\n"
-        "██╔═══██╗██║    ██║██╔════╝██╔══██╗╚══██╔══╝╚██╗ ██╔╝██╔════╝██╔═══██╗██║████╗  ██║\n"
-        "██║   ██║██║ █╗ ██║█████╗  ██████╔╝   ██║    ╚████╔╝ ██║     ██║   ██║██║██╔██╗ ██║\n"
-        "██║▄▄ ██║██║███╗██║██╔══╝  ██╔══██╗   ██║     ╚██╔╝  ██║     ██║   ██║██║██║╚██╗██║\n"
-        "╚██████╔╝╚███╔███╔╝███████╗██║  ██║   ██║      ██║   ╚██████╗╚██████╔╝██║██║ ╚████║\n"
-        " ╚══▀▀═╝  ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝   ╚═╝      ╚═╝    ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝\n"
-        "                                                                                   \n";
+        "\n              			                       \n"        
+	"    ____  _                                                	\n"
+	"   / __ \(_)___ _____ ___  ____  ____  ___  __  ______ ___ 	\n"
+	"  / / / / / __ `/ __ `__ \/ __ \/ __ \/ _ \/ / / / __ `__ \	\n"
+	" / /_/ / / /_/ / / / / / / /_/ / / / /  __/ /_/ / / / / / /	\n"
+	"/_____/_/\__,_/_/ /_/ /_/\____/_/ /_/\___/\__,_/_/ /_/ /_/ 	\n"                                                		"                                                             \n";
 
 /*!
     Windows has some characters it won't display in a terminal. If your ascii
@@ -112,12 +107,12 @@ namespace WalletConfig {
 /*!
     The prefix your coins address starts with
 */
-const uint64_t addressPrefix = 0x14820c;
+const uint64_t addressPrefix = 0x9825b;
 
 /*!
     Your coins 'Ticker', e.g. Monero = XMR, Bitcoin = BTC
 */
-const std::string ticker = "QWC";
+const std::string ticker = "DIAM";
 
 /*!
     The filename to output the CSV to in save_csv
@@ -133,7 +128,7 @@ const std::string addressBookFilename = ".addressBook.json";
 /*!
     The name of your deamon
 */
-const std::string daemonName = "qwertycoind";
+const std::string daemonName = "Diamoneumd";
 
 /*!
     The name to call this wallet
@@ -143,7 +138,7 @@ const std::string walletName = "simplewallet";
 /*!
     The name of service/walletd, the programmatic rpc interface to a wallet
 */
-const std::string walletdName = "qwertycoin-service";
+const std::string walletdName = "diamoneum-service";
 
 /*!
     The full name of your crypto
@@ -153,7 +148,7 @@ const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 /*!
     Where can your users contact you for support? E.g. discord
 */
-const std::string contactLink = "http://chat.qwertycoin.org";
+const std::string contactLink = "http://chat.diamoneum.xyz";
 
 /*!
     The number of decimals your coin has
