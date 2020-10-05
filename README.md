@@ -1,4 +1,4 @@
-![image](https://cdn.qwertycoin.org/images/press/other/qwc-github-3.png)
+![image](http://diamoneum.xyz/wp-content/uploads/2020/10/Diamoneum-Logo-Example-1-1.png)
 #### Master Build Status
 [![Build Status](https://github.com/qwertycoin-org/qwertycoin/workflows/Build/badge.svg?branch=master)](https://github.com/qwertycoin-org/qwertycoin/actions)
 
