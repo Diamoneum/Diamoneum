@@ -1,6 +1,7 @@
 // Copyright (c) 2019 Helder Garcia <helder.garcia@gmail.com>
 // Copyright (c) 2019, The Karbo developers
 // Copyright (c) 2018-2020, The Qwertycoin Group.
+// Copyright (c) 2020, The Diamoneum Group.
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -39,7 +40,7 @@ using Common::JsonValue;
 using namespace Logging;
 using namespace CryptoNote;
 using namespace PaymentService;
-using namespace Qwertycoin;
+using namespace Diamoneum;
 
 #ifndef ENDL
 #define ENDL std::endl

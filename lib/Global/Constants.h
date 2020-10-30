@@ -1,4 +1,5 @@
 // Copyright 2019 (c) The Qwertycoin Group.
+// Copyright (c) 2020, The Diamoneum Group.
 // Licensed under the GNU General Public License, Version 3.
 // See the file LICENSE from this package for details.
 
@@ -12,7 +13,7 @@
 #include <Global/CryptoNoteConfig.h>
 #include <version.h>
 
-namespace Qwertycoin {
+namespace Diamoneum {
 
 const Crypto::Hash NULL_HASH = boost::value_initialized<Crypto::Hash>();
 const Crypto::PublicKey NULL_PUBLIC_KEY = boost::value_initialized<Crypto::PublicKey>();
@@ -241,4 +242,4 @@ inline std::string getProjectCLIHeader()
     return programHeader.str();
 }
 
-} // namespace Qwertycoin
+} // namespace Diamoneum

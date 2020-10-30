@@ -4,21 +4,22 @@
 // Copyright (c) 2018, Ryo Currency Project
 // Copyright (c) 2016-2018, The Karbowanec developers
 // Copyright (c) 2018-2020, The Qwertycoin Group.
+// Copyright (c) 2020, The Diamoneum Group.
 //
-// This file is part of Qwertycoin.
+// This file is part of Diamoneum.
 //
-// Qwertycoin is free software: you can redistribute it and/or modify
+// Diamoneum is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Qwertycoin is distributed in the hope that it will be useful,
+// Diamoneum is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with Qwertycoin.  If not, see <http://www.gnu.org/licenses/>.
+// along with Diamoneum.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
@@ -76,7 +77,7 @@ const uint64_t MAXIMUM_FEE_V1                                 = UINT64_C(1000000
 const uint64_t MINIMUM_FEE_V2                                 = UINT64_C(10000);
 const uint64_t MAXIMUM_FEE_V2                                 = UINT64_C(10000);
 
-// We changed the fee from 0.01 to 1.00 QWC at this height
+// We changed the fee from 0.01 to 1.00 DIAM at this height
 const uint32_t MINIMUM_FEE_V0_HEIGHT                          = 50710;
 
 // TODO: Check fee Upgrade heights
@@ -163,7 +164,7 @@ const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.dat";
 const char     CRYPTONOTE_BLOCKCHAIN_INDICES_FILENAME[]      = "blockchainindices.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
 
-/* Governance Fee and range // The Qwertycoin Foundation */
+/* Governance Fee and range // The Diamoneum Foundation */
 const uint16_t GOVERNANCE_PERCENT_FEE                        = 10; // 10 percent of base block reward
 const uint32_t GOVERNANCE_HEIGHT_START                       = UPGRADE_HEIGHT_V6;
 const uint32_t GOVERNANCE_HEIGHT_END                         = 4000000;
@@ -233,7 +234,7 @@ const std::string LICENSE_URL                                = "https://github.c
 const bool     P2P_MESSAGES                                  =  true;
 const uint16_t P2P_MESSAGES_CHAR_COUNT                       =  160;
 
-/* Governance Fee Wallets // The Qwertycoin Foundation */
+/* Governance Fee Wallets // The Diamoneum Foundation */
 const std::string GOVERNANCE_WALLET_ADDRESS                  = "diamoxEdqZsQ63PU1MEryiDQursyCbKiQf7YQxfvCPx8JU9zG4mwziNSS3hbkgqMaNV7hyWQ6mV5igbNZRyJLykE4UGMrTY5gS";
 const std::string GOVERNANCE_VIEW_SECRET_KEY                 = "331b2f43d158857cfc0b9eac329879ae599f7ce166dfd4b3fce81eb3139c6e02";
 
