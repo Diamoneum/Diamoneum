@@ -30,23 +30,23 @@
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-DATA_DIR="/var/qwertycoin"
-LOG_DIR="/var/log/qwertycoin"
-RUN_DIR="/var/run/qwertycoin"
+DATA_DIR="/var/Diamoneum"
+LOG_DIR="/var/log/Diamoneum"
+RUN_DIR="/var/run/Diamoneum"
 TMP_DIR="/tmp"
 HTDOCS_DIR="/tmp"
 
-QWCD="/usr/sbin/qwertycoind"
+DIAMD="/usr/sbin/Diamoneumd"
 
-QWCD_P2P_IP="0.0.0.0"
-QWCD_P2P_PORT="8196"
-QWCD_RPC_IP="127.0.0.1"
-QWCD_RPC_PORT="8197"
-QWCD_LOG_LEVEL="2"
-QWCD_FEE_ADDRESS="QWC1K6XEhCC1WsZzT9RRVpc1MLXXdHVKt2BUGSrsmkkXAvqh52sVnNc1pYmoF2TEXsAvZnyPaZu8MW3S8EWHNfAh7X2xa63P7Y"
-QWCD_VIEW_KEY=""
+DIAMD_P2P_IP="0.0.0.0"
+DIAMD_P2P_PORT="8196"
+DIAMD_RPC_IP="127.0.0.1"
+DIAMD_RPC_PORT="57576"
+DIAMD_LOG_LEVEL="2"
+DIAMD_FEE_ADDRESS="diamowieNXVVxGW2GbJERHgawnfvWokZ6bHnzYC2w67KMyV1BiT9Aux6JzY1wg4HmJHMoYJQdyj5LHKKEsFP2FBsA5aimMoQ46"
+DIAMD_VIEW_KEY=""
 
-QWCS_CONTROL="/usr/lib/qwertycoin/qwcs.sh"
+DIAMS_CONTROL="/usr/lib/Diamoneum/diamcs.sh"
 
 SIGTERM_TIMEOUT=240
 SIGKILL_TIMEOUT=120
@@ -108,7 +108,7 @@ else
 fi
 
 # Check all files
-if [ ! -f $QWCD ]; then
+if [ ! -f $DIAMD ]; then
   echo "Error: DEAMON bin file not found!"
   exit 1
 fi
@@ -118,8 +118,8 @@ if [ ! -f $ZIP ]; then
   exit 1
 fi
 
-if [ ! -f $QWCS_CONTROL ]; then
-  echo "Error: QWCS start script file not found!"
+if [ ! -f $DIAMS_CONTROL ]; then
+  echo "Error: DIAMS start script file not found!"
   exit 1
 fi
 
@@ -127,69 +127,69 @@ fi
 
 # Function logger
 logger(){
-  if [ ! -f $LOG_DIR/qwcd_control.log ]; then
-    touch $LOG_DIR/qwcd_control.log
+  if [ ! -f $LOG_DIR/diamcd_control.log ]; then
+    touch $LOG_DIR/diamcd_control.log
   fi
   mess=[$(date '+%Y-%m-%d %H:%M:%S')]" "$1
-  echo $mess >> $LOG_DIR/qwcd_control.log
+  echo $mess >> $LOG_DIR/diamcd_control.log
   echo $mess
 }
 
 # Funstion locker
 locker(){
   if [ "$1" = "check" ]; then
-    if [ -f $RUN_DIR/qwcd_control.lock ]; then
+    if [ -f $RUN_DIR/diamcd_control.lock ]; then
       logger "LOCKER: previous task is not completed; exiting..."
       exit 0
     fi
   fi
   if [ "$1" = "init" ]; then
-    touch $RUN_DIR/qwcd_control.lock
+    touch $RUN_DIR/diamcd_control.lock
   fi
     if [ "$1" = "end" ]; then
-    rm -f $RUN_DIR/qwcd_control.lock
+    rm -f $RUN_DIR/diamcd_control.lock
   fi
 }
 
 # Function init service
 service_init(){
-  $QWCD --data-dir $DATA_DIR \
-        --log-file $LOG_DIR/qwcd.log \
-        --log-level $QWCD_LOG_LEVEL \
+  $DIAMD --data-dir $DATA_DIR \
+        --log-file $LOG_DIR/diamcd.log \
+        --log-level $DIAMD_LOG_LEVEL \
         --restricted-rpc \
         --no-console \
         --enable-cors "*" \
-        --p2p-bind-ip $QWCD_P2P_IP \
-        --p2p-bind-port $QWCD_P2P_PORT \
-        --rpc-bind-ip $QWCD_RPC_IP \
-        --rpc-bind-port $QWCD_RPC_PORT \
-        --fee-address $QWCD_FEE_ADDRESS \
-        --view-key $QWCD_VIEW_KEY > /dev/null & echo $! > $RUN_DIR/QWCD.pid
+        --p2p-bind-ip $DIAMD_P2P_IP \
+        --p2p-bind-port $DIAMD_P2P_PORT \
+        --rpc-bind-ip $DIAMD_RPC_IP \
+        --rpc-bind-port $DIAMD_RPC_PORT \
+        --fee-address $DIAMD_FEE_ADDRESS \
+        --view-key $DIAMD_VIEW_KEY > /dev/null & echo $! > $RUN_DIR/DIAMD.pid
 }
 
 # Function start service
 service_start(){
-  if [ ! -f $RUN_DIR/QWCD.pid ]; then
+  if [ ! -f $RUN_DIR/DIAMD.pid ]; then
     logger "START: trying to start service..."
     service_init
     sleep 5
-    if [ -f $RUN_DIR/QWCD.pid ]; then
-      pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCD.pid)
+    if [ -f $RUN_DIR/DIAMD.pid ]; then
+      pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMD.pid)
       if [ -f /proc/$pid/stat ]; then
         logger "START: success!"
       fi
     fi
   else
-    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCD.pid)
+    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMD.pid)
     if [ -f /proc/$pid/stat ]; then
       logger "START: process is already running"
     else
       logger "START: abnormal termination detected; starting..."
-      rm -f $RUN_DIR/QWCD.pid
+      rm -f $RUN_DIR/DIAMD.pid
       service_init
       sleep 5
-      if [ -f $RUN_DIR/QWCD.pid ]; then
-        pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCD.pid)
+      if [ -f $RUN_DIR/DIAMD.pid ]; then
+        pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMD.pid)
         if [ -f /proc/$pid/stat ]; then
           logger "START: success!"
         fi
@@ -200,27 +200,27 @@ service_start(){
 
 # Function stop service
 service_stop(){
-  if [ -f $RUN_DIR/QWCD.pid ]; then
+  if [ -f $RUN_DIR/DIAMD.pid ]; then
     logger "STOP: attempting to stop the service..."
-    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCD.pid)
+    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMD.pid)
     if [ -f /proc/$pid/stat ]; then
       kill $pid
       sleep 5
       for i in $(seq 1 $SIGTERM_TIMEOUT); do
         if [ ! -f /proc/$pid/stat ]; then
-          rm -f $RUN_DIR/QWCD.pid
+          rm -f $RUN_DIR/DIAMD.pid
           logger "STOP: success!"
           break
         fi
         sleep 1
       done
-      if [ -f $RUN_DIR/QWCD.pid ]; then
+      if [ -f $RUN_DIR/DIAMD.pid ]; then
         logger "STOP: attempt failed, trying again..."
         kill -9 $pid
         sleep 5
         for i in $(seq 1 $SIGKILL_TIMEOUT); do
           if [ ! -f /proc/$pid/stat ]; then
-            rm -f $RUN_DIR/QWCD.pid
+            rm -f $RUN_DIR/DIAMD.pid
             logger "STOP: service has been killed (SIGKILL) due to ERROR!"
             break
           fi
@@ -229,7 +229,7 @@ service_stop(){
       fi
     else
       logger "STOP: PID file found, but service not detected; possible error..."
-      rm -f $RUN_DIR/QWCD.pid
+      rm -f $RUN_DIR/DIAMD.pid
     fi
   else
     logger "STOP: no service found!"
@@ -270,8 +270,8 @@ archiver(){
 # Function checker
 checker(){
   logger "CHECKER: began"
-  if [ -f $RUN_DIR/QWCD.pid ]; then
-    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCD.pid)
+  if [ -f $RUN_DIR/DIAMD.pid ]; then
+    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMD.pid)
     if [ -f /proc/$pid/stat ]; then
       logger "CHECKER: all fine!"
     else
@@ -285,10 +285,10 @@ checker(){
 }
 
 # Fucntion check simplewallet is was started
-IS_QWCS="stop"
+IS_DIAMS="stop"
 is_run_simplewallet(){
-  if [ -f $RUN_DIR/QWCS.pid ]; then
-    IS_QWCS="run"
+  if [ -f $RUN_DIR/DIAMS.pid ]; then
+    IS_DIAMS="run"
   fi
 }
 
@@ -302,9 +302,9 @@ do_start(){
 do_stop(){
   is_run_simplewallet
   logger "DO STOP: procedure initializing..."
-  if [ "$IS_QWCS" = "run" ]; then
+  if [ "$IS_DIAMS" = "run" ]; then
     logger "DO STOP: stopping dependant service..."
-    $QWCS_CONTROL --stop > /dev/null
+    $DIAMS_CONTROL --stop > /dev/null
   fi
   service_stop
   logger "DO STOP: ok"
@@ -313,17 +313,17 @@ do_stop(){
 do_restart(){
   is_run_simplewallet
   logger "DO RESTART: procedure initializing..."
-  if [ "$IS_QWCS" = "run" ]; then
+  if [ "$IS_DIAMS" = "run" ]; then
     logger "DO RESTART: Simplewallet was started and will be stopped. Stopping Simplewallet service..."
-    $QWCS_CONTROL --stop > /dev/null
+    $DIAMS_CONTROL --stop > /dev/null
   fi
   service_stop
   service_start
-  if [ "$IS_QWCS" = "run" ]; then
+  if [ "$IS_DIAMS" = "run" ]; then
     logger "DO RESTART: Simplewallet will be started again. Waiting for the node to be ready..."
     sleep 15
     logger "DO RESTART: starting Simplewallet service..."
-    $QWCS_CONTROL --start > /dev/null
+    $DIAMS_CONTROL --start > /dev/null
   fi
   logger "DO RESTART: ok"
 }

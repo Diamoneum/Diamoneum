@@ -416,7 +416,7 @@ bool core::check_tx_fee(
             // TODO: simplify overcomplicated expression.
             if (height < CryptoNote::parameters::MINIMUM_FEE_V2_HEIGHT ? fee < CryptoNote::parameters::MINIMUM_FEE_V1 : (getBlockMajorVersionForHeight(height) < BLOCK_MAJOR_VERSION_6 ? fee < m_currency.minimumFee() : fee < getMinimalFeeForHeight(loose_check ? height - CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY : height))) {
                 if (height < CryptoNote::parameters::MINIMUM_FEE_V0_HEIGHT) {
-                    // We changed the minimum fee to a higher one (0.01 -> 1 QWC in the past to fix some floods)
+                    // We changed the minimum fee to a higher one (0.01 -> 1 DIAM in the past to fix some floods)
                     // Now we have to fix this in a future PR with a proper fee check
                     return true;
                 } else {

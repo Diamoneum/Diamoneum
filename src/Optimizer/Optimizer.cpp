@@ -1,9 +1,7 @@
 // Copyright (c) 2019 Helder Garcia <helder.garcia@gmail.com>
 // Copyright (c) 2019, The Karbo developers
 // Copyright (c) 2018-2020, The Qwertycoin Group.
-// Copyright (c) 2020, The Diamoneum Group.
-//
-// This program is free software: you can redistribute it and/or modify
+// Copyright (c) 2020, The Diamoneum Group.// This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
@@ -337,7 +335,7 @@ bool run_optimizer(po::variables_map &vm)
 
 int main(int argc, char *argv[])
 {
-    Qwertycoin::Breakpad::ExceptionHandler exceptionHandler;
+    Diamoneum::Breakpad::ExceptionHandler exceptionHandler;
 
     po::options_description desc_general("General options");
     command_line::add_arg(desc_general, command_line::arg_help);

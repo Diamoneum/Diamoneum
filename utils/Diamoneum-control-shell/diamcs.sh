@@ -30,24 +30,24 @@
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-DATA_DIR="/var/qwertycoin"
-LOG_DIR="/var/log/qwertycoin"
-RUN_DIR="/var/run/qwertycoin"
+DATA_DIR="/var/Diamoneum"
+LOG_DIR="/var/log/Diamoneum"
+RUN_DIR="/var/run/Diamoneum"
 
-QWCS="/usr/sbin/simplewallet"
+DIAMS="/usr/sbin/simplewallet"
 
-QWCS_NODE_HOST="127.0.0.1"
-QWCS_NODE_PORT="8196"
-QWCS_WALLET="Wallet.dat"
-QWCS_PASS="pass"
-QWCS_LOG_LEVEL="3"
-QWCS_RPC_IP="127.0.0.1"
-QWCS_RPC_PORT="15000"
+DIAMS_NODE_HOST="127.0.0.1"
+DIAMS_NODE_PORT="8196"
+DIAMS_WALLET="Wallet.dat"
+DIAMS_PASS="pass"
+DIAMS_LOG_LEVEL="3"
+DIAMS_RPC_IP="127.0.0.1"
+DIAMS_RPC_PORT="15000"
 
 SIGTERM_TIMEOUT=30
 SIGKILL_TIMEOUT=20
 
-QWCS_WALLET=$DATA_DIR/$QWCS_WALLET
+DIAMS_WALLET=$DATA_DIR/$DIAMS_WALLET
 
 
 ## Base check
@@ -84,12 +84,12 @@ else
 fi
 
 # Check all bin files
-if [ ! -f $QWCS ]; then
+if [ ! -f $DIAMS ]; then
   echo "Error: SIMPLEWALLET bin file not found!"
   exit 1
 fi
 
-if [ ! -f $QWCS_WALLET.wallet ]; then
+if [ ! -f $DIAMS_WALLET.wallet ]; then
   echo "Error: wallet bin file not found!"
   exit 1
 fi
@@ -97,65 +97,65 @@ fi
 
 # Function logger
 logger(){
-  if [ ! -f $LOG_DIR/qwcs_control.log ]; then
-    touch $LOG_DIR/qwcs_control.log
+  if [ ! -f $LOG_DIR/DIAMs_control.log ]; then
+    touch $LOG_DIR/DIAMs_control.log
   fi
   mess=[$(date '+%Y-%m-%d %H:%M:%S')]" "$1
-  echo $mess >> $LOG_DIR/qwcs_control.log
+  echo $mess >> $LOG_DIR/DIAMs_control.log
   echo $mess
 }
 
 # Funstion locker
 locker(){
   if [ "$1" = "check" ]; then
-    if [ -f $RUN_DIR/qwcs_control.lock ]; then
+    if [ -f $RUN_DIR/DIAMs_control.lock ]; then
       logger "LOCKER: previous task is not completed; exiting..."
       exit 0
     fi
   fi
   if [ "$1" = "init" ]; then
-    touch $RUN_DIR/qwcs_control.lock
+    touch $RUN_DIR/DIAMs_control.lock
   fi
     if [ "$1" = "end" ]; then
-    rm -f $RUN_DIR/qwcs_control.lock
+    rm -f $RUN_DIR/DIAMs_control.lock
   fi
 }
 
 # Function init service
 service_init(){
-  $QWCS --wallet-file $QWCS_WALLET \
-        --password $QWCS_PASS \
-        --daemon-host $QWCS_NODE_HOST \
-        --daemon-port $QWCS_NODE_PORT \
-        --rpc-bind-ip $QWCS_RPC_IP \
-        --rpc-bind-port $QWCS_RPC_PORT \
-        --log-file $LOG_DIR/qwcs.log \
-        --log-level $QWCS_LOG_LEVEL > /dev/null & echo $! > $RUN_DIR/QWCS.pid
+  $DIAMS --wallet-file $DIAMS_WALLET \
+        --password $DIAMS_PASS \
+        --daemon-host $DIAMS_NODE_HOST \
+        --daemon-port $DIAMS_NODE_PORT \
+        --rpc-bind-ip $DIAMS_RPC_IP \
+        --rpc-bind-port $DIAMS_RPC_PORT \
+        --log-file $LOG_DIR/DIAMs.log \
+        --log-level $DIAMS_LOG_LEVEL > /dev/null & echo $! > $RUN_DIR/DIAMS.pid
 }
 
 # Function start service
 service_start(){
-  if [ ! -f $RUN_DIR/QWCS.pid ]; then
+  if [ ! -f $RUN_DIR/DIAMS.pid ]; then
     logger "START: trying to start service..."
     service_init
     sleep 5
-    if [ -f $RUN_DIR/QWCS.pid ]; then
-      pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCS.pid)
+    if [ -f $RUN_DIR/DIAMS.pid ]; then
+      pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMS.pid)
       if [ -f /proc/$pid/stat ]; then
         logger "START: success!"
       fi
     fi
   else
-    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCS.pid)
+    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMS.pid)
     if [ -f /proc/$pid/stat ]; then
       logger "START: process is already running"
     else
       logger "START: abnormal termination detected; starting..."
-      rm -f $RUN_DIR/QWCS.pid
+      rm -f $RUN_DIR/DIAMS.pid
       service_init
       sleep 5
-      if [ -f $RUN_DIR/QWCS.pid ]; then
-        pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCS.pid)
+      if [ -f $RUN_DIR/DIAMS.pid ]; then
+        pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMS.pid)
         if [ -f /proc/$pid/stat ]; then
           logger "START: success!"
         fi
@@ -166,27 +166,27 @@ service_start(){
 
 # Function stop service
 service_stop(){
-  if [ -f $RUN_DIR/QWCS.pid ]; then
+  if [ -f $RUN_DIR/DIAMS.pid ]; then
     logger "STOP: attempting to stop the service..."
-    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/QWCS.pid)
+    pid=$(sed 's/[^0-9]*//g' $RUN_DIR/DIAMS.pid)
     if [ -f /proc/$pid/stat ]; then
       kill $pid
       sleep 5
       for i in $(seq 1 $SIGTERM_TIMEOUT); do
         if [ ! -f /proc/$pid/stat ]; then
-          rm -f $RUN_DIR/QWCS.pid
+          rm -f $RUN_DIR/DIAMS.pid
           logger "STOP: success!"
           break
         fi
         sleep 1
       done
-      if [ -f $RUN_DIR/QWCS.pid ]; then
+      if [ -f $RUN_DIR/DIAMS.pid ]; then
         logger "STOP: attempt failed, trying again..."
         kill -9 $pid
         sleep 5
         for i in $(seq 1 $SIGKILL_TIMEOUT); do
           if [ ! -f /proc/$pid/stat ]; then
-            rm -f $RUN_DIR/QWCS.pid
+            rm -f $RUN_DIR/DIAMS.pid
             logger "STOP: service has been killed (SIGKILL) due to ERROR!"
             break
           fi
@@ -195,7 +195,7 @@ service_stop(){
       fi
     else
       logger "STOP: PID file found, but service not detected; possible error..."
-      rm -f $RUN_DIR/QWCS.pid
+      rm -f $RUN_DIR/DIAMS.pid
     fi
   else
     logger "STOP: no service found!"

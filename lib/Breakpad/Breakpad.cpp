@@ -1,4 +1,5 @@
 // Copyright (c) 2018-2020, The Qwertycoin Group.
+// Copyright (c) 2020 The Diamoneum Group.
 //
 // Licensed under the GNU General Public License, Version 3.
 // See the file LICENSE from this package for details.
@@ -54,7 +55,7 @@ static bool exceptionHandlerCallback(
 }
 #endif
 
-Qwertycoin::Breakpad::ExceptionHandler::ExceptionHandler(const std::string &dumpPath)
+Diamoneum::Breakpad::ExceptionHandler::ExceptionHandler(const std::string &dumpPath)
 {
 #if defined(_WIN32) || defined(WIN32) // Windows
     const std::string defaultDumpPath = std::string("C:\\Windows\\Temp");
@@ -97,7 +98,7 @@ Qwertycoin::Breakpad::ExceptionHandler::ExceptionHandler(const std::string &dump
 #endif
 }
 
-Qwertycoin::Breakpad::ExceptionHandler::~ExceptionHandler()
+Diamoneum::Breakpad::ExceptionHandler::~ExceptionHandler()
 {
     if (m_exceptionHandler) {
         delete m_exceptionHandler;
@@ -108,7 +109,7 @@ Qwertycoin::Breakpad::ExceptionHandler::~ExceptionHandler()
 /*!
     WARNING: This function will crash running process! Use only for testing purposes.
 */
-void Qwertycoin::Breakpad::ExceptionHandler::dummyCrash()
+void Diamoneum::Breakpad::ExceptionHandler::dummyCrash()
 {
     int *a = (int *)0x42;
     fprintf(stdout, "Going to crash...\n");

@@ -1,26 +1,26 @@
-set(QwertycoinTests_INCLUDE_DIRS
-    ${QwertycoinFramework_INCLUDE_DIRS}
+set(DiamoneumTests_INCLUDE_DIRS
+    ${DiamoneumFramework_INCLUDE_DIRS}
     "${CMAKE_CURRENT_LIST_DIR}"
 )
 
-# QwertycoinTests
+# DiamoneumTests
 
-add_custom_target(QwertycoinTests)
-add_dependencies(QwertycoinTests
-    QwertycoinTests::CoreTests
-    QwertycoinTests::CryptoTests
-    QwertycoinTests::DifficultyTests
-    QwertycoinTests::HashTargetTests
-    QwertycoinTests::HashTests
-    QwertycoinTests::NodeRpcProxyTests
-    QwertycoinTests::PerformanceTests
-    QwertycoinTests::SystemTests
-    QwertycoinTests::UnitTests
+add_custom_target(DiamoneumTests)
+add_dependencies(DiamoneumTests
+    DiamoneumTests::CoreTests
+    DiamoneumTests::CryptoTests
+    DiamoneumTests::DifficultyTests
+    DiamoneumTests::HashTargetTests
+    DiamoneumTests::HashTests
+    DiamoneumTests::NodeRpcProxyTests
+    DiamoneumTests::PerformanceTests
+    DiamoneumTests::SystemTests
+    DiamoneumTests::UnitTests
 )
 
-# QwertycoinTests::CoreTests
+# DiamoneumTests::CoreTests
 
-set(QwertycoinTests_CoreTests_SOURCES
+set(DiamoneumTests_CoreTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/CoreTests/AccountBoostSerialization.h"
     "${CMAKE_CURRENT_LIST_DIR}/CoreTests/BlockReward.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/CoreTests/BlockReward.h"
@@ -58,34 +58,34 @@ set(QwertycoinTests_CoreTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/CoreTests/double_spend.inl"
 )
 
-set(QwertycoinTests_CoreTests_LIBS
+set(DiamoneumTests_CoreTests_LIBS
     Boost::date_time
     Boost::program_options
     Boost::serialization
     codecov
-    QwertycoinFramework::Common
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::InProcessNode
-    QwertycoinFramework::Logging
-    QwertycoinFramework::Serialization
-    QwertycoinFramework::System
-    QwertycoinTests::TestGenerator
+    DiamoneumFramework::Common
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::InProcessNode
+    DiamoneumFramework::Logging
+    DiamoneumFramework::Serialization
+    DiamoneumFramework::System
+    DiamoneumTests::TestGenerator
 )
 
-add_executable(QwertycoinTests_CoreTests ${QwertycoinTests_CoreTests_SOURCES})
-add_executable(QwertycoinTests::CoreTests ALIAS QwertycoinTests_CoreTests)
-target_include_directories(QwertycoinTests_CoreTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_CoreTests PRIVATE ${QwertycoinTests_CoreTests_LIBS})
-set_target_properties(QwertycoinTests_CoreTests PROPERTIES OUTPUT_NAME "core_tests")
+add_executable(DiamoneumTests_CoreTests ${DiamoneumTests_CoreTests_SOURCES})
+add_executable(DiamoneumTests::CoreTests ALIAS DiamoneumTests_CoreTests)
+target_include_directories(DiamoneumTests_CoreTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_CoreTests PRIVATE ${DiamoneumTests_CoreTests_LIBS})
+set_target_properties(DiamoneumTests_CoreTests PROPERTIES OUTPUT_NAME "core_tests")
 
 add_test(
     NAME CoreTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_CoreTests> --generate_and_play_test_data
+    COMMAND $<TARGET_FILE:DiamoneumTests_CoreTests> --generate_and_play_test_data
 )
 
-# QwertycoinTests::CryptoTests
+# DiamoneumTests::CryptoTests
 
-set(QwertycoinTests_CryptoTests_SOURCES
+set(DiamoneumTests_CryptoTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/CryptoTests/crypto-ops-data.c"
     "${CMAKE_CURRENT_LIST_DIR}/CryptoTests/crypto-ops.c"
     "${CMAKE_CURRENT_LIST_DIR}/CryptoTests/crypto-tests.h"
@@ -95,119 +95,119 @@ set(QwertycoinTests_CryptoTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/CryptoTests/random.c"
 )
 
-set(QwertycoinTests_CryptoTests_LIBS codecov)
+set(DiamoneumTests_CryptoTests_LIBS codecov)
 
-add_executable(QwertycoinTests_CryptoTests ${QwertycoinTests_CryptoTests_SOURCES})
-add_executable(QwertycoinTests::CryptoTests ALIAS QwertycoinTests_CryptoTests)
-target_include_directories(QwertycoinTests_CryptoTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_CryptoTests PRIVATE ${QwertycoinTests_CryptoTests_LIBS})
-set_target_properties(QwertycoinTests_CryptoTests PROPERTIES OUTPUT_NAME "crypto_tests")
+add_executable(DiamoneumTests_CryptoTests ${DiamoneumTests_CryptoTests_SOURCES})
+add_executable(DiamoneumTests::CryptoTests ALIAS DiamoneumTests_CryptoTests)
+target_include_directories(DiamoneumTests_CryptoTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_CryptoTests PRIVATE ${DiamoneumTests_CryptoTests_LIBS})
+set_target_properties(DiamoneumTests_CryptoTests PROPERTIES OUTPUT_NAME "crypto_tests")
 
 add_test(
     NAME CryptoTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_CryptoTests> ${CMAKE_CURRENT_LIST_DIR}/CryptoTests/tests.txt
+    COMMAND $<TARGET_FILE:DiamoneumTests_CryptoTests> ${CMAKE_CURRENT_LIST_DIR}/CryptoTests/tests.txt
 )
 
-# QwertycoinTests::Data (skipped, not a library or executable target)
+# DiamoneumTests::Data (skipped, not a library or executable target)
 
-# QwertycoinTests::DifficultyTests
+# DiamoneumTests::DifficultyTests
 
-set(QwertycoinTests_DifficultyTests_SOURCES
+set(DiamoneumTests_DifficultyTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/DifficultyTests/Difficulty.cpp"
 )
 
-set(QwertycoinTests_DifficultyTests_LIBS
+set(DiamoneumTests_DifficultyTests_LIBS
     codecov
-    QwertycoinFramework::Logging
-    QwertycoinFramework::CryptoNoteCore
+    DiamoneumFramework::Logging
+    DiamoneumFramework::CryptoNoteCore
 )
 
-add_executable(QwertycoinTests_DifficultyTests ${QwertycoinTests_DifficultyTests_SOURCES})
-add_executable(QwertycoinTests::DifficultyTests ALIAS QwertycoinTests_DifficultyTests)
-target_include_directories(QwertycoinTests_DifficultyTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_DifficultyTests PRIVATE ${QwertycoinTests_DifficultyTests_LIBS})
-set_target_properties(QwertycoinTests_DifficultyTests PROPERTIES OUTPUT_NAME "difficulty_tests")
+add_executable(DiamoneumTests_DifficultyTests ${DiamoneumTests_DifficultyTests_SOURCES})
+add_executable(DiamoneumTests::DifficultyTests ALIAS DiamoneumTests_DifficultyTests)
+target_include_directories(DiamoneumTests_DifficultyTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_DifficultyTests PRIVATE ${DiamoneumTests_DifficultyTests_LIBS})
+set_target_properties(DiamoneumTests_DifficultyTests PROPERTIES OUTPUT_NAME "difficulty_tests")
 
 add_test(
     NAME DifficultyTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_DifficultyTests> ${CMAKE_CURRENT_LIST_DIR}/DifficultyTests/data.txt
+    COMMAND $<TARGET_FILE:DiamoneumTests_DifficultyTests> ${CMAKE_CURRENT_LIST_DIR}/DifficultyTests/data.txt
 )
 
-# QwertycoinTests::HashTargetTests
+# DiamoneumTests::HashTargetTests
 
-set(QwertycoinTests_HashTargetTests_SOURCES
+set(DiamoneumTests_HashTargetTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/HashTargetTests/HashTarget.cpp"
 )
 
-set(QwertycoinTests_HashTargetTests_LIBS
+set(DiamoneumTests_HashTargetTests_LIBS
     codecov
-    QwertycoinFramework::CryptoNoteCore
+    DiamoneumFramework::CryptoNoteCore
 )
 
-add_executable(QwertycoinTests_HashTargetTests ${QwertycoinTests_HashTargetTests_SOURCES})
-add_executable(QwertycoinTests::HashTargetTests ALIAS QwertycoinTests_HashTargetTests)
-target_include_directories(QwertycoinTests_HashTargetTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_HashTargetTests PRIVATE ${QwertycoinTests_HashTargetTests_LIBS})
-set_target_properties(QwertycoinTests_HashTargetTests PROPERTIES OUTPUT_NAME "hash_target_tests")
+add_executable(DiamoneumTests_HashTargetTests ${DiamoneumTests_HashTargetTests_SOURCES})
+add_executable(DiamoneumTests::HashTargetTests ALIAS DiamoneumTests_HashTargetTests)
+target_include_directories(DiamoneumTests_HashTargetTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_HashTargetTests PRIVATE ${DiamoneumTests_HashTargetTests_LIBS})
+set_target_properties(DiamoneumTests_HashTargetTests PROPERTIES OUTPUT_NAME "hash_target_tests")
 
 add_test(
     NAME HashTargetTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_HashTargetTests>
+    COMMAND $<TARGET_FILE:DiamoneumTests_HashTargetTests>
 )
 
-# QwertycoinTests::HashTests
+# DiamoneumTests::HashTests
 
-set(QwertycoinTests_HashTests_SOURCES
+set(DiamoneumTests_HashTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/HashTests/main.cpp"
 )
 
-set(QwertycoinTests_HashTests_LIBS
+set(DiamoneumTests_HashTests_LIBS
     codecov
-    QwertycoinFramework::Crypto
+    DiamoneumFramework::Crypto
 )
 
-add_executable(QwertycoinTests_HashTests ${QwertycoinTests_HashTests_SOURCES})
-add_executable(QwertycoinTests::HashTests ALIAS QwertycoinTests_HashTests)
-target_include_directories(QwertycoinTests_HashTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_HashTests PRIVATE ${QwertycoinTests_HashTests_LIBS})
-set_target_properties(QwertycoinTests_HashTests PROPERTIES OUTPUT_NAME "hash_tests")
+add_executable(DiamoneumTests_HashTests ${DiamoneumTests_HashTests_SOURCES})
+add_executable(DiamoneumTests::HashTests ALIAS DiamoneumTests_HashTests)
+target_include_directories(DiamoneumTests_HashTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_HashTests PRIVATE ${DiamoneumTests_HashTests_LIBS})
+set_target_properties(DiamoneumTests_HashTests PROPERTIES OUTPUT_NAME "hash_tests")
 
 foreach(hash IN ITEMS extra-blake extra-groestl extra-jh extra-skein fast slow tree)
     add_test(
         NAME HashTests-${hash}
-        COMMAND $<TARGET_FILE:QwertycoinTests_HashTests> ${hash} ${CMAKE_CURRENT_LIST_DIR}/HashTests/tests-${hash}.txt
+        COMMAND $<TARGET_FILE:DiamoneumTests_HashTests> ${hash} ${CMAKE_CURRENT_LIST_DIR}/HashTests/tests-${hash}.txt
     )
 endforeach()
 
-# QwertycoinTests::NodeRpcProxyTests
+# DiamoneumTests::NodeRpcProxyTests
 
-set(QwertycoinTests_NodeRpcProxyTests_SOURCES
+set(DiamoneumTests_NodeRpcProxyTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/NodeRpcProxyTests/NodeRpcProxyTests.cpp"
 )
 
-set(QwertycoinTests_NodeRpcProxyTests_LIBS
+set(DiamoneumTests_NodeRpcProxyTests_LIBS
     codecov
-    QwertycoinFramework::Common
-    QwertycoinFramework::Logging
-    QwertycoinFramework::NodeRpcProxy
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::Serialization
+    DiamoneumFramework::Common
+    DiamoneumFramework::Logging
+    DiamoneumFramework::NodeRpcProxy
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::Serialization
 )
 
-add_executable(QwertycoinTests_NodeRpcProxyTests ${QwertycoinTests_NodeRpcProxyTests_SOURCES})
-add_executable(QwertycoinTests::NodeRpcProxyTests ALIAS QwertycoinTests_NodeRpcProxyTests)
-target_include_directories(QwertycoinTests_NodeRpcProxyTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_NodeRpcProxyTests PRIVATE ${QwertycoinTests_NodeRpcProxyTests_LIBS})
-set_target_properties(QwertycoinTests_NodeRpcProxyTests PROPERTIES OUTPUT_NAME "node_rpc_proxy_tests")
+add_executable(DiamoneumTests_NodeRpcProxyTests ${DiamoneumTests_NodeRpcProxyTests_SOURCES})
+add_executable(DiamoneumTests::NodeRpcProxyTests ALIAS DiamoneumTests_NodeRpcProxyTests)
+target_include_directories(DiamoneumTests_NodeRpcProxyTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_NodeRpcProxyTests PRIVATE ${DiamoneumTests_NodeRpcProxyTests_LIBS})
+set_target_properties(DiamoneumTests_NodeRpcProxyTests PROPERTIES OUTPUT_NAME "node_rpc_proxy_tests")
 
 add_test(
     NAME NodeRpcProxyTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_NodeRpcProxyTests>
+    COMMAND $<TARGET_FILE:DiamoneumTests_NodeRpcProxyTests>
 )
 
-# QwertycoinTests::PerformanceTests
+# DiamoneumTests::PerformanceTests
 
-set(QwertycoinTests_PerformanceTests_SOURCES
+set(DiamoneumTests_PerformanceTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/PerformanceTests/CheckRingSignature.h"
     "${CMAKE_CURRENT_LIST_DIR}/PerformanceTests/ConstructTransaction.h"
     "${CMAKE_CURRENT_LIST_DIR}/PerformanceTests/CryptoNoteSlowHash.h"
@@ -224,27 +224,27 @@ set(QwertycoinTests_PerformanceTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/PerformanceTests/main.cpp"
 )
 
-set(QwertycoinTests_PerformanceTests_LIBS
+set(DiamoneumTests_PerformanceTests_LIBS
     Boost::chrono
     codecov
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::Logging
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::Logging
 )
 
-add_executable(QwertycoinTests_PerformanceTests ${QwertycoinTests_PerformanceTests_SOURCES})
-add_executable(QwertycoinTests::PerformanceTests ALIAS QwertycoinTests_PerformanceTests)
-target_include_directories(QwertycoinTests_PerformanceTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_PerformanceTests PRIVATE ${QwertycoinTests_PerformanceTests_LIBS})
-set_target_properties(QwertycoinTests_PerformanceTests PROPERTIES OUTPUT_NAME "performance_tests")
+add_executable(DiamoneumTests_PerformanceTests ${DiamoneumTests_PerformanceTests_SOURCES})
+add_executable(DiamoneumTests::PerformanceTests ALIAS DiamoneumTests_PerformanceTests)
+target_include_directories(DiamoneumTests_PerformanceTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_PerformanceTests PRIVATE ${DiamoneumTests_PerformanceTests_LIBS})
+set_target_properties(DiamoneumTests_PerformanceTests PROPERTIES OUTPUT_NAME "performance_tests")
 
 add_test(
     NAME PerformanceTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_PerformanceTests>
+    COMMAND $<TARGET_FILE:DiamoneumTests_PerformanceTests>
 )
 
-# QwertycoinTests::SystemTests
+# DiamoneumTests::SystemTests
 
-set(QwertycoinTests_SystemTests_SOURCES
+set(DiamoneumTests_SystemTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/SystemTests/ContextGroupTests.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/SystemTests/ContextGroupTimeoutTests.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/SystemTests/ContextTests.cpp"
@@ -263,40 +263,40 @@ set(QwertycoinTests_SystemTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/SystemTests/main.cpp"
 )
 
-set(QwertycoinTests_SystemTests_LIBS
+set(DiamoneumTests_SystemTests_LIBS
     codecov
     GTest::gtest_main
-    QwertycoinFramework::System
+    DiamoneumFramework::System
 )
 
-add_executable(QwertycoinTests_SystemTests ${QwertycoinTests_SystemTests_SOURCES})
-add_executable(QwertycoinTests::SystemTests ALIAS QwertycoinTests_SystemTests)
-target_include_directories(QwertycoinTests_SystemTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_SystemTests PRIVATE ${QwertycoinTests_SystemTests_LIBS})
-set_target_properties(QwertycoinTests_SystemTests PROPERTIES OUTPUT_NAME "system_tests")
+add_executable(DiamoneumTests_SystemTests ${DiamoneumTests_SystemTests_SOURCES})
+add_executable(DiamoneumTests::SystemTests ALIAS DiamoneumTests_SystemTests)
+target_include_directories(DiamoneumTests_SystemTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_SystemTests PRIVATE ${DiamoneumTests_SystemTests_LIBS})
+set_target_properties(DiamoneumTests_SystemTests PROPERTIES OUTPUT_NAME "system_tests")
 
 add_test(
     NAME SystemTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_SystemTests>
+    COMMAND $<TARGET_FILE:DiamoneumTests_SystemTests>
 )
 
-# QwertycoinTests::TestGenerator
+# DiamoneumTests::TestGenerator
 
-set(QwertycoinTests_TestGenerator_SOURCES
+set(DiamoneumTests_TestGenerator_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/TestGenerator/TestGenerator.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/TestGenerator/TestGenerator.h"
 )
 
-set(QwertycoinTests_TestGenerator_LIBS codecov)
+set(DiamoneumTests_TestGenerator_LIBS codecov)
 
-add_library(QwertycoinTests_TestGenerator ${QwertycoinTests_TestGenerator_SOURCES})
-add_library(QwertycoinTests::TestGenerator ALIAS QwertycoinTests_TestGenerator)
-target_include_directories(QwertycoinTests_TestGenerator PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_TestGenerator PRIVATE ${QwertycoinTests_TestGenerator_LIBS})
+add_library(DiamoneumTests_TestGenerator ${DiamoneumTests_TestGenerator_SOURCES})
+add_library(DiamoneumTests::TestGenerator ALIAS DiamoneumTests_TestGenerator)
+target_include_directories(DiamoneumTests_TestGenerator PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_TestGenerator PRIVATE ${DiamoneumTests_TestGenerator_LIBS})
 
-# QwertycoinTests::UnitTests
+# DiamoneumTests::UnitTests
 
-set(QwertycoinTests_UnitTests_SOURCES
+set(DiamoneumTests_UnitTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/UnitTests/ArrayRefTests.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/UnitTests/ArrayViewTests.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/UnitTests/Base58.cpp"
@@ -354,26 +354,26 @@ set(QwertycoinTests_UnitTests_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/UnitTests/main.cpp"
 )
 
-set(QwertycoinTests_UnitTests_LIBS
+set(DiamoneumTests_UnitTests_LIBS
     codecov
     GTest::gtest_main
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::CryptoNoteProtocol
-    QwertycoinFramework::Http
-    QwertycoinFramework::InProcessNode
-    QwertycoinFramework::Logging
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::Wallet
-    QwertycoinTests::TestGenerator
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::CryptoNoteProtocol
+    DiamoneumFramework::Http
+    DiamoneumFramework::InProcessNode
+    DiamoneumFramework::Logging
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::Wallet
+    DiamoneumTests::TestGenerator
 )
 
-add_executable(QwertycoinTests_UnitTests ${QwertycoinTests_UnitTests_SOURCES})
-add_executable(QwertycoinTests::UnitTests ALIAS QwertycoinTests_UnitTests)
-target_include_directories(QwertycoinTests_UnitTests PRIVATE ${QwertycoinTests_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTests_UnitTests PRIVATE ${QwertycoinTests_UnitTests_LIBS})
-set_target_properties(QwertycoinTests_UnitTests PROPERTIES OUTPUT_NAME "unit_tests")
+add_executable(DiamoneumTests_UnitTests ${DiamoneumTests_UnitTests_SOURCES})
+add_executable(DiamoneumTests::UnitTests ALIAS DiamoneumTests_UnitTests)
+target_include_directories(DiamoneumTests_UnitTests PRIVATE ${DiamoneumTests_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTests_UnitTests PRIVATE ${DiamoneumTests_UnitTests_LIBS})
+set_target_properties(DiamoneumTests_UnitTests PROPERTIES OUTPUT_NAME "unit_tests")
 
 add_test(
     NAME UnitTests
-    COMMAND $<TARGET_FILE:QwertycoinTests_UnitTests>
+    COMMAND $<TARGET_FILE:DiamoneumTests_UnitTests>
 )

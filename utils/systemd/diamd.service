@@ -1,0 +1,17 @@
+[Unit]
+Description=Diamoneum DIAM service
+After=network.target
+
+[Service]
+Type=oneshot
+User=diamoneum
+Group=diamoneum
+PermissionsStartOnly=true
+RemainAfterExit=yes
+ExecStartPre=-/bin/mkdir -p /var/run/diamoneum
+ExecStartPre=/bin/chown -R diamoneum:diamoneum /var/run/diamoneum/
+ExecStart=/usr/lib/diamoneum/diamd.sh --start
+ExecStop=/usr/lib/diamoneum/diamd.sh --stop
+
+[Install]
+WantedBy=multi-user.target

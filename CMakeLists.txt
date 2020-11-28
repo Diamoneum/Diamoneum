@@ -1,5 +1,5 @@
-# Qwertycoin: C++ client, tools and libraries.
-# Copyright 2019 (c) The Qwertycoin Group.
+# Diamoneum: C++ client, tools and libraries.
+# Copyright 2019 (c) The Diamoneum Group.
 # Licensed under the GNU General Public License, Version 3.
 # See the file LICENSE from this package for details.
 

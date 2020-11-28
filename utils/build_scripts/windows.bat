@@ -1,4 +1,4 @@
-:: Copyright (c) 2017-2018, QWERTYCOIN, (forked from) The Monero Project
+:: Copyright (c) 2017-2018, DIAMONEUM, (forked from) The Monero Project
 ::
 :: All rights reserved.
 ::
@@ -40,6 +40,6 @@ mkdir build\win%BuildProcessorArchitecture%
 cd build\win%BuildProcessorArchitecture%
 
 cmake -G "Visual Studio %VisualStudioVersion:.0=% Win%BuildProcessorArchitecture%" -DBOOST_ROOT="%LocationDependencyBoostRoot%" -DBOOST_LIBRARYDIR="%LocationDependencyBoostLibrary%" "%LocationBuildSource%"
-msbuild Qwertycoin.sln /p:Configuration=Release
+msbuild Diamoneum.sln /p:Configuration=Release
 
 pause

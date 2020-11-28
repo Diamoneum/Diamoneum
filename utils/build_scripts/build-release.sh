@@ -8,7 +8,7 @@ BUILD_DIRECTORY=$2
 function usage()
 {
     echo "This script builds the dynamically and statically linked version"
-    echo "and generates the checksum files of the Qwertycoin tag provided."
+    echo "and generates the checksum files of the Diamoneum tag provided."
     echo
     echo "USAGE: $0 <tag> <build-directory>"
     echo
@@ -72,7 +72,7 @@ function generate_tarball()
     tar --transform "s,^,$RELEASE_NAME/," -c -f $TARBALL -z -C "$CLONE_DIR/build/release/src" \
         miner \
         simplewallet \
-        qwertycoind \
+        Diamoneumd \
         walletd \
         connectivity_tool
 
@@ -117,11 +117,11 @@ then
 fi
 
 # -- Config
-GITHUB_REPO="https://github.com/qwertycoin-org/qwertycoin.git"
-CLONE_DIR="$BUILD_DIRECTORY/qwertycoin-buildall"
-TARGET_DIR="$BUILD_DIRECTORY/qwertycoin-releases"
-DYNAMIC_RELEASE="qwertycoin-${TAG_VERSION}-linux-CLI"
-STATIC_RELEASE="qwertycoin-${TAG_VERSION}-linux-staticboost-CLI"
+GITHUB_REPO="https://github.com/Diamoneum/Diamoneum.git"
+CLONE_DIR="$BUILD_DIRECTORY/diamoneum-buildall"
+TARGET_DIR="$BUILD_DIRECTORY/diamoneum-releases"
+DYNAMIC_RELEASE="diamoneum-${TAG_VERSION}-linux-CLI"
+STATIC_RELEASE="diamoneum-${TAG_VERSION}-linux-staticboost-CLI"
 
 checkout_tag
 build_static_linked_version

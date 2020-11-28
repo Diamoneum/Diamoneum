@@ -1,93 +1,93 @@
-set(QwertycoinTools_INCLUDE_DIRS
-    ${QwertycoinFramework_INCLUDE_DIRS}
+set(DiamoneumTools_INCLUDE_DIRS
+    ${DiamoneumFramework_INCLUDE_DIRS}
     "${CMAKE_CURRENT_LIST_DIR}"
 )
 
-set(QwertycoinTools_INCLUDE_DIRS ${QwertycoinTools_INCLUDE_DIRS} PARENT_SCOPE)
+set(DiamoneumTools_INCLUDE_DIRS ${DiamoneumTools_INCLUDE_DIRS} PARENT_SCOPE)
 
-# QwertycoinTools
+# DiamoneumTools
 
-add_custom_target(QwertycoinTools)
-add_dependencies(QwertycoinTools
-    QwertycoinTools::ConnectivityTool
-    QwertycoinTools::Daemon
-    QwertycoinTools::Miner
-    QwertycoinTools::Optimizer
-    QwertycoinTools::PaymentGateService
-    QwertycoinTools::SimpleWallet
+add_custom_target(DiamoneumTools)
+add_dependencies(DiamoneumTools
+    DiamoneumTools::ConnectivityTool
+    DiamoneumTools::Daemon
+    DiamoneumTools::Miner
+    DiamoneumTools::Optimizer
+    DiamoneumTools::PaymentGateService
+    DiamoneumTools::SimpleWallet
 )
 
-# QwertycoinTools::BinaryInfo # NOTE: Ignore this. It's not a target.
+# DiamoneumTools::BinaryInfo # NOTE: Ignore this. It's not a target.
 
-# QwertycoinTools::ConnectivityTool
+# DiamoneumTools::ConnectivityTool
 
-set(QwertycoinTools_ConnectivityTool_SOURCES
+set(DiamoneumTools_ConnectivityTool_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/ConnectivityTool/ConnectivityTool.cpp"
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_ConnectivityTool_SOURCES
+    list(APPEND DiamoneumTools_ConnectivityTool_SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/BinaryInfo/connectivity_tool.rc"
     )
 endif()
 
-set(QwertycoinTools_ConnectivityTool_LIBS
+set(DiamoneumTools_ConnectivityTool_LIBS
     Boost::program_options
-    QwertycoinFramework::Breakpad
-    QwertycoinFramework::Common
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::P2p
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::Serialization
-    QwertycoinFramework::System
+    DiamoneumFramework::Breakpad
+    DiamoneumFramework::Common
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::P2p
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::Serialization
+    DiamoneumFramework::System
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_ConnectivityTool_LIBS ws2_32)
+    list(APPEND DiamoneumTools_ConnectivityTool_LIBS ws2_32)
 endif()
 
-add_executable(QwertycoinTools_ConnectivityTool ${QwertycoinTools_ConnectivityTool_SOURCES})
-add_executable(QwertycoinTools::ConnectivityTool ALIAS QwertycoinTools_ConnectivityTool)
-target_include_directories(QwertycoinTools_ConnectivityTool PRIVATE ${QwertycoinTools_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTools_ConnectivityTool ${QwertycoinTools_ConnectivityTool_LIBS})
-set_target_properties(QwertycoinTools_ConnectivityTool PROPERTIES OUTPUT_NAME "connectivity_tool")
+add_executable(DiamoneumTools_ConnectivityTool ${DiamoneumTools_ConnectivityTool_SOURCES})
+add_executable(DiamoneumTools::ConnectivityTool ALIAS DiamoneumTools_ConnectivityTool)
+target_include_directories(DiamoneumTools_ConnectivityTool PRIVATE ${DiamoneumTools_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTools_ConnectivityTool ${DiamoneumTools_ConnectivityTool_LIBS})
+set_target_properties(DiamoneumTools_ConnectivityTool PROPERTIES OUTPUT_NAME "connectivity_tool")
 
-# QwertycoinTools::Daemon
+# DiamoneumTools::Daemon
 
-set(QwertycoinTools_Daemon_SOURCES
+set(DiamoneumTools_Daemon_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/Daemon/Daemon.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/Daemon/DaemonCommandsHandler.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/Daemon/DaemonCommandsHandler.h"
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_Daemon_SOURCES
+    list(APPEND DiamoneumTools_Daemon_SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/BinaryInfo/daemon.rc"
     )
 endif()
 
-set(QwertycoinTools_Daemon_LIBS
+set(DiamoneumTools_Daemon_LIBS
     Boost::filesystem
-    QwertycoinFramework::Breakpad
-    QwertycoinFramework::Common
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::Global
-    QwertycoinFramework::Logging
-    QwertycoinFramework::P2p
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::Serialization
-    QwertycoinFramework::System
+    DiamoneumFramework::Breakpad
+    DiamoneumFramework::Common
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::Global
+    DiamoneumFramework::Logging
+    DiamoneumFramework::P2p
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::Serialization
+    DiamoneumFramework::System
 )
 
-add_executable(QwertycoinTools_Daemon ${QwertycoinTools_Daemon_SOURCES})
-add_executable(QwertycoinTools::Daemon ALIAS QwertycoinTools_Daemon)
-target_include_directories(QwertycoinTools_Daemon PRIVATE ${QwertycoinTools_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTools_Daemon PRIVATE ${QwertycoinTools_Daemon_LIBS})
-set_target_properties(QwertycoinTools_Daemon PROPERTIES OUTPUT_NAME "Diamoneumd")
+add_executable(DiamoneumTools_Daemon ${DiamoneumTools_Daemon_SOURCES})
+add_executable(DiamoneumTools::Daemon ALIAS DiamoneumTools_Daemon)
+target_include_directories(DiamoneumTools_Daemon PRIVATE ${DiamoneumTools_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTools_Daemon PRIVATE ${DiamoneumTools_Daemon_LIBS})
+set_target_properties(DiamoneumTools_Daemon PROPERTIES OUTPUT_NAME "Diamoneumd")
 
-# QwertycoinTools::Miner
+# DiamoneumTools::Miner
 
-set(QwertycoinTools_Miner_SOURCES
+set(DiamoneumTools_Miner_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/Miner/BlockchainMonitor.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/Miner/BlockchainMonitor.h"
     "${CMAKE_CURRENT_LIST_DIR}/Miner/Miner.cpp"
@@ -101,70 +101,70 @@ set(QwertycoinTools_Miner_SOURCES
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_Miner_SOURCES
+    list(APPEND DiamoneumTools_Miner_SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/BinaryInfo/miner.rc"
     )
 endif()
 
-set(QwertycoinTools_Miner_LIBS
+set(DiamoneumTools_Miner_LIBS
     Boost::program_options
-    QwertycoinFramework::Breakpad
-    QwertycoinFramework::Common
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::Logging
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::Serialization
-    QwertycoinFramework::System
+    DiamoneumFramework::Breakpad
+    DiamoneumFramework::Common
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::Logging
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::Serialization
+    DiamoneumFramework::System
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_Miner_LIBS ws2_32)
+    list(APPEND DiamoneumTools_Miner_LIBS ws2_32)
 endif()
 
-add_executable(QwertycoinTools_Miner ${QwertycoinTools_Miner_SOURCES})
-add_executable(QwertycoinTools::Miner ALIAS QwertycoinTools_Miner)
-target_include_directories(QwertycoinTools_Miner PRIVATE ${QwertycoinTools_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTools_Miner PRIVATE ${QwertycoinTools_Miner_LIBS})
-set_target_properties(QwertycoinTools_Miner PROPERTIES OUTPUT_NAME "miner")
+add_executable(DiamoneumTools_Miner ${DiamoneumTools_Miner_SOURCES})
+add_executable(DiamoneumTools::Miner ALIAS DiamoneumTools_Miner)
+target_include_directories(DiamoneumTools_Miner PRIVATE ${DiamoneumTools_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTools_Miner PRIVATE ${DiamoneumTools_Miner_LIBS})
+set_target_properties(DiamoneumTools_Miner PROPERTIES OUTPUT_NAME "miner")
 
-# QwertycoinTools::Optimizer
+# DiamoneumTools::Optimizer
 
-set(QwertycoinTools_Optimizer_SOURCES
+set(DiamoneumTools_Optimizer_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/Optimizer/Optimizer.cpp"
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_Optimizer_SOURCES
+    list(APPEND DiamoneumTools_Optimizer_SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/BinaryInfo/optimizer.rc"
     )
 endif()
 
-set(QwertycoinTools_Optimizer_LIBS
+set(DiamoneumTools_Optimizer_LIBS
     Boost::filesystem
     Boost::program_options
-    QwertycoinFramework::Breakpad
-    QwertycoinFramework::Common
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::Global
-    QwertycoinFramework::InProcessNode
-    QwertycoinFramework::Logging
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::System
+    DiamoneumFramework::Breakpad
+    DiamoneumFramework::Common
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::Global
+    DiamoneumFramework::InProcessNode
+    DiamoneumFramework::Logging
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::System
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_Optimizer_LIBS ws2_32)
+    list(APPEND DiamoneumTools_Optimizer_LIBS ws2_32)
 endif()
 
-add_executable(QwertycoinTools_Optimizer ${QwertycoinTools_Optimizer_SOURCES})
-add_executable(QwertycoinTools::Optimizer ALIAS QwertycoinTools_Optimizer)
-target_include_directories(QwertycoinTools_Optimizer PRIVATE ${QwertycoinTools_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTools_Optimizer ${QwertycoinTools_Optimizer_LIBS})
-set_target_properties(QwertycoinTools_Optimizer PROPERTIES OUTPUT_NAME "optimizer")
+add_executable(DiamoneumTools_Optimizer ${DiamoneumTools_Optimizer_SOURCES})
+add_executable(DiamoneumTools::Optimizer ALIAS DiamoneumTools_Optimizer)
+target_include_directories(DiamoneumTools_Optimizer PRIVATE ${DiamoneumTools_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTools_Optimizer ${DiamoneumTools_Optimizer_LIBS})
+set_target_properties(DiamoneumTools_Optimizer PROPERTIES OUTPUT_NAME "optimizer")
 
-# QwertycoinTools::PaymentGateService
+# DiamoneumTools::PaymentGateService
 
-set(QwertycoinTools_PaymentGateService_SOURCES
+set(DiamoneumTools_PaymentGateService_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/PaymentGateService/ConfigurationManager.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/PaymentGateService/ConfigurationManager.h"
     "${CMAKE_CURRENT_LIST_DIR}/PaymentGateService/PaymentGateService.cpp"
@@ -177,33 +177,33 @@ set(QwertycoinTools_PaymentGateService_SOURCES
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_PaymentGateService_SOURCES
+    list(APPEND DiamoneumTools_PaymentGateService_SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/BinaryInfo/walletd.rc"
     )
 endif()
 
-set(QwertycoinTools_PaymentGateService_LIBS
+set(DiamoneumTools_PaymentGateService_LIBS
     Boost::filesystem
     Boost::program_options
-    QwertycoinFramework::Breakpad
-    QwertycoinFramework::Common
-    QwertycoinFramework::CryptoNoteCore
-    QwertycoinFramework::Global
-    QwertycoinFramework::InProcessNode
-    QwertycoinFramework::Logging
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::System
+    DiamoneumFramework::Breakpad
+    DiamoneumFramework::Common
+    DiamoneumFramework::CryptoNoteCore
+    DiamoneumFramework::Global
+    DiamoneumFramework::InProcessNode
+    DiamoneumFramework::Logging
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::System
 )
 
-add_executable(QwertycoinTools_PaymentGateService ${QwertycoinTools_PaymentGateService_SOURCES})
-add_executable(QwertycoinTools::PaymentGateService ALIAS QwertycoinTools_PaymentGateService)
-target_include_directories(QwertycoinTools_PaymentGateService PRIVATE ${QwertycoinTools_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTools_PaymentGateService ${QwertycoinTools_PaymentGateService_LIBS})
-set_target_properties(QwertycoinTools_PaymentGateService PROPERTIES OUTPUT_NAME "walletd")
+add_executable(DiamoneumTools_PaymentGateService ${DiamoneumTools_PaymentGateService_SOURCES})
+add_executable(DiamoneumTools::PaymentGateService ALIAS DiamoneumTools_PaymentGateService)
+target_include_directories(DiamoneumTools_PaymentGateService PRIVATE ${DiamoneumTools_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTools_PaymentGateService ${DiamoneumTools_PaymentGateService_LIBS})
+set_target_properties(DiamoneumTools_PaymentGateService PROPERTIES OUTPUT_NAME "walletd")
 
-# QwertycoinTools::SimpleWallet
+# DiamoneumTools::SimpleWallet
 
-set(QwertycoinTools_SimpleWallet_SOURCES
+set(DiamoneumTools_SimpleWallet_SOURCES
     "${CMAKE_CURRENT_LIST_DIR}/SimpleWallet/PasswordContainer.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/SimpleWallet/PasswordContainer.h"
     "${CMAKE_CURRENT_LIST_DIR}/SimpleWallet/SimpleWallet.cpp"
@@ -211,43 +211,43 @@ set(QwertycoinTools_SimpleWallet_SOURCES
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_SimpleWallet_SOURCES
+    list(APPEND DiamoneumTools_SimpleWallet_SOURCES
         "${CMAKE_CURRENT_LIST_DIR}/BinaryInfo/simplewallet.rc"
     )
 endif()
 
-set(QwertycoinTools_SimpleWallet_LIBS
+set(DiamoneumTools_SimpleWallet_LIBS
     Boost::filesystem
     Boost::program_options
-    QwertycoinFramework::Breakpad
-    QwertycoinFramework::Common
-    QwertycoinFramework::Global
-    QwertycoinFramework::Logging
-    QwertycoinFramework::NodeRpcProxy
-    QwertycoinFramework::Rpc
-    QwertycoinFramework::Serialization
-    QwertycoinFramework::Wallet
+    DiamoneumFramework::Breakpad
+    DiamoneumFramework::Common
+    DiamoneumFramework::Global
+    DiamoneumFramework::Logging
+    DiamoneumFramework::NodeRpcProxy
+    DiamoneumFramework::Rpc
+    DiamoneumFramework::Serialization
+    DiamoneumFramework::Wallet
 )
 
 if(WIN32)
-    list(APPEND QwertycoinTools_SimpleWallet_LIBS ws2_32)
+    list(APPEND DiamoneumTools_SimpleWallet_LIBS ws2_32)
 endif()
 
-add_executable(QwertycoinTools_SimpleWallet ${QwertycoinTools_SimpleWallet_SOURCES})
-add_executable(QwertycoinTools::SimpleWallet ALIAS QwertycoinTools_SimpleWallet)
-target_include_directories(QwertycoinTools_SimpleWallet PRIVATE ${QwertycoinTools_INCLUDE_DIRS})
-target_link_libraries(QwertycoinTools_SimpleWallet ${QwertycoinTools_SimpleWallet_LIBS})
-set_target_properties(QwertycoinTools_SimpleWallet PROPERTIES OUTPUT_NAME "simplewallet")
+add_executable(DiamoneumTools_SimpleWallet ${DiamoneumTools_SimpleWallet_SOURCES})
+add_executable(DiamoneumTools::SimpleWallet ALIAS DiamoneumTools_SimpleWallet)
+target_include_directories(DiamoneumTools_SimpleWallet PRIVATE ${DiamoneumTools_INCLUDE_DIRS})
+target_link_libraries(DiamoneumTools_SimpleWallet ${DiamoneumTools_SimpleWallet_LIBS})
+set_target_properties(DiamoneumTools_SimpleWallet PROPERTIES OUTPUT_NAME "simplewallet")
 
 # Installation
 
 install(TARGETS
-            QwertycoinTools_ConnectivityTool
-            QwertycoinTools_Daemon
-            QwertycoinTools_Miner
-            QwertycoinTools_Optimizer
-            QwertycoinTools_PaymentGateService
-            QwertycoinTools_SimpleWallet
+            DiamoneumTools_ConnectivityTool
+            DiamoneumTools_Daemon
+            DiamoneumTools_Miner
+            DiamoneumTools_Optimizer
+            DiamoneumTools_PaymentGateService
+            DiamoneumTools_SimpleWallet
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib/static

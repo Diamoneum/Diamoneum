@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Qwertycoin Multi-installer
-# a one line clone-and-compile for qwertycoin:
+# Diamoneum Multi-installer
+# a one line clone-and-compile for Diamoneum:
 #
-#     ` $ curl -sL "https://qwertycoin.org/files/compile/multi-installer.sh" | bash
+#     ` $ curl -sL "https://diamoneum.xyz/files/compile/multi-installer.sh" | bash
 #
 # Supports Ubuntu 16.04 LTS, OSX 10.10+
 # Supports building project from current directory (automatic detection)
@@ -41,26 +41,26 @@ _set_wd() {
         _note "Building project from current working directory ($PWD)"
     else
         _note "Cloning project with git..."
-        if [ -d "$PWD"/qwertycoin ]; then
-            read -r -p "${1:-qwertycoin directory already exists. Overwrite? [y/N]} " response
+        if [ -d "$PWD"/diamoneum ]; then
+            read -r -p "${1:-diamoneum directory already exists. Overwrite? [y/N]} " response
             case "$response" in
                 [yY][eE][sS|[yY])
-                    _colorize red "Overwriting old qwertycoin directory" && echo
-                    rm -rf "$PWD"/qwertycoin
+                    _colorize red "Overwriting old diamoneum directory" && echo
+                    rm -rf "$PWD"/diamoneum
                     ;;
                 *)
-                    _fail "qwertycoin directory already exists. Aborting..."
+                    _fail "diamoneum directory already exists. Aborting..."
                     ;;
             esac
         fi
-        mkdir qwertycoin
-        git clone -q https://github.com/qwertycoin-org/qwertycoin qwertycoin   >>build.log 2>&1 || _fail "Unable to clone git repository. Please see build.log for more information"
-        cd qwertycoin
+        mkdir diamoneum
+        git clone -q https://github.com/Diamoneum/Diamoneum diamoneum   >>build.log 2>&1 || _fail "Unable to clone git repository. Please see build.log for more information"
+        cd diamoneum
     fi
 }
 
-_build_qwertycoin() {
-    _note "Building qwertycoin from source (this might take a while)..."
+_build_diamoneum() {
+    _note "Building diamoneum from source (this might take a while)..."
     if [ -d build ]; then
         _colorize red "Overwriting old build directory" && echo
         rm -rf build
@@ -109,7 +109,7 @@ _configure_linux() {
     elif [ "$(awk -F= '/^NAME/{print $2}' /etc/os-release)" = "\"Debian GNU/Linux\"" ]; then
         _configure_debian
     else
-        _fail "Your OS version isn't supported by this installer. Please consider adding support for your OS to the project ('https://github.com/qwertycoin-org/')"
+        _fail "Your OS version isn't supported by this installer. Please consider adding support for your OS to the project ('https://github.com/Diamoneum/Diamoneum')"
     fi
 }
 
@@ -138,19 +138,19 @@ _configure_os() {
             _configure_osx
             ;;
         *)
-            _fail "This installer only runs on OSX 10.10+ and Ubuntu 16.04+. Please consider adding support for your OS to the project ('https://github.com/qwertycoin-org/')"
+            _fail "This installer only runs on OSX 10.10+ and Ubuntu 16.04+. Please consider adding support for your OS to the project ('https://github.com/Diamoneum/Diamoneum')"
             ;;
     esac
     _note "Operating system configuration completed. You're halfway there!"
 }
 
-_note "Qwertycoin Multi_Installer"
+_note "Diamoneum Multi_Installer"
 
 _configure_os
 
 _set_wd
-_build_qwertycoin
+_build_diamoneumn
 
 _note "Installation complete!"
-_note "Look in 'qwertycoin/build/src/' for the executible binaries. See 'https://github.com/qwertycoin-org/qwertycoin' for more project support."
+_note "Look in 'Diamoneum/build/src/' for the executible binaries. See 'https://github.com/Diamoneum/Diamoneum' for more project support."
  

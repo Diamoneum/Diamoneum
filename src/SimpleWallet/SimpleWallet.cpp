@@ -5,6 +5,7 @@
 // Copyright (c) 2014-2017, The Monero Project
 // Copyright (c) 2016-2018, The Karbo developers
 // Copyright (c) 2018-2020, The Qwertycoin Group.
+// Copyright (c) 2020, The Diamoneum Group.
 //
 // All rights reserved.
 //
@@ -103,7 +104,7 @@
 
 using namespace CryptoNote;
 using namespace Logging;
-using namespace Qwertycoin;
+using namespace Diamoneum;
 using Common::JsonValue;
 
 namespace po = boost::program_options;
@@ -937,8 +938,8 @@ bool processServerAliasResponse(const std::string &s, std::string &address)
 {
     try {
         // Courtesy of Monero Project
-        // make sure the txt record has "oa1:qwc" and find it
-        auto pos = s.find("oa1:qwc");
+        // make sure the txt record has "oa1:diam" and find it
+        auto pos = s.find("oa1:diam");
         if (pos == std::string::npos) {
             return false;
         }
@@ -1382,7 +1383,7 @@ bool simple_wallet::get_reserve_proof(const std::vector<std::string> &args)
     try {
         const std::string sig_str = m_wallet->getReserveProof(reserve,args.size()==2?args[1] : "");
 
-        const std::string filename = "reserve_proof_" + args[0] + "QWC.txt";
+        const std::string filename = "reserve_proof_" + args[0] + "DIAM.txt";
         boost::system::error_code ec;
         if (boost::filesystem::exists(filename, ec)) {
             boost::filesystem::remove(filename, ec);
@@ -3500,7 +3501,7 @@ int main(int argc, char *argv[])
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
-    Qwertycoin::Breakpad::ExceptionHandler exceptionHandler;
+    Diamoneum::Breakpad::ExceptionHandler exceptionHandler;
 
     setbuf(stdout, NULL);
 

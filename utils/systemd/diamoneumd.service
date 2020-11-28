@@ -1,14 +1,14 @@
 [Unit]
-Description=Qwertycoin Full Node
+Description=Diamoneum Full Node
 After=network.target
 
 [Service]
-User=qwertycoin
-Group=qwertycoin
+User=Diamoneum
+Group=Diamoneum
 WorkingDirectory=~
 
 Type=forking
-ExecStart=/usr/bin/qwertycoind --config-file /etc/qwertycoind.conf --detach
+ExecStart=/usr/bin/Diamoneumd --config-file /etc/Diamoneumd.conf --detach
 
 # This is necessary because qwertycoind does not yet support
 # writing a PID file, which means systemd tries to guess the PID
