@@ -685,7 +685,7 @@ TEST_F(WalletLegacyApi, sendWrongAmount) {
   ASSERT_NO_FATAL_FAILURE(WaitWalletSync(aliceWalletObserver.get()));
 
   CryptoNote::WalletLegacyTransfer tr;
-  tr.address = "1234567890qwertasdfgzxcvbyuiophjklnm";
+  tr.address = "1234567890diamtasdfgzxcvbyuiophjklnm";
   tr.amount = 1;
 
   EXPECT_THROW(alice->sendTransaction(tr, 1), std::system_error);

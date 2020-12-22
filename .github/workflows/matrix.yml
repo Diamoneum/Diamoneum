@@ -86,16 +86,16 @@ jobs:
         run: |
             if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA::8}; fi
             cd build/src
-            TARGETS="qwertycoind simplewallet walletd optimizer miner"
+            TARGETS="Diamoneumd simplewallet walletd optimizer miner"
             if [[ "${LABEL}" != "aarch64" ]]; then strip ${TARGETS}; fi
-            rm -rf qwertycoin-${TAG}
-            mkdir qwertycoin-${TAG}
-            cp ${TARGETS} qwertycoin-${TAG}/
-            cp ../../LICENSE.txt qwertycoin-${TAG}/
-            tar cvfz qwertycoin-${LABEL}-${TAG}.tar.gz qwertycoin-${TAG}/
-            echo ::set-output name=binary_path::qwertycoin-${TAG}
-            echo ::set-output name=artifact_name::qwertycoin-${LABEL}-${TAG}
-            echo ::set-output name=file_name::qwertycoin-${LABEL}-${TAG}.tar.gz
+            rm -rf Diamoneum-${TAG}
+            mkdir Diamoneum-${TAG}
+            cp ${TARGETS} Diamoneum-${TAG}/
+            cp ../../LICENSE.txt Diamoneum-${TAG}/
+            tar cvfz Diamoneum-${LABEL}-${TAG}.tar.gz Diamoneum-${TAG}/
+            echo ::set-output name=binary_path::Diamoneum-${TAG}
+            echo ::set-output name=artifact_name::Diamoneum-${LABEL}-${TAG}
+            echo ::set-output name=file_name::Diamoneum-${LABEL}-${TAG}.tar.gz
 
       # Upload to GH Release
       - name: Upload to GH Release
@@ -161,16 +161,16 @@ jobs:
         run: |
             if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA::8}; fi
             cd build/src
-            TARGETS="qwertycoind simplewallet walletd optimizer miner"
+            TARGETS="Diamoneumd simplewallet walletd optimizer miner"
             strip ${TARGETS}
-            rm -rf qwertycoin-${TAG}
-            mkdir qwertycoin-${TAG}
-            cp ${TARGETS} qwertycoin-${TAG}/
-            cp ../../LICENSE.txt qwertycoin-${TAG}/
-            tar cvfz qwertycoin-${LABEL}-${TAG}.tar.gz qwertycoin-${TAG}/
-            echo ::set-output name=binary_path::qwertycoin-${TAG}
-            echo ::set-output name=artifact_name::qwertycoin-${LABEL}-${TAG}
-            echo ::set-output name=file_name::qwertycoin-${LABEL}-${TAG}.tar.gz
+            rm -rf Diamoneum-${TAG}
+            mkdir Diamoneum-${TAG}
+            cp ${TARGETS} Diamoneum-${TAG}/
+            cp ../../LICENSE.txt Diamoneum-${TAG}/
+            tar cvfz Diamoneum-${LABEL}-${TAG}.tar.gz Diamoneum-${TAG}/
+            echo ::set-output name=binary_path::Diamoneum-${TAG}
+            echo ::set-output name=artifact_name::Diamoneum-${LABEL}-${TAG}
+            echo ::set-output name=file_name::Diamoneum-${LABEL}-${TAG}.tar.gz
 
 
       # Upload to GH Release
@@ -235,14 +235,14 @@ jobs:
         run: |
             if [[ "${TAG:5:4}" == "tags" ]]; then export TAG=${TAG:10}; else export TAG=${COMMIT_SHA::8}; fi
             cd build/src/Release
-            rm -rf qwertycoin-${TAG}
-            mkdir qwertycoin-${TAG}
-            cp *.exe qwertycoin-${TAG}/
-            cp ../../../LICENSE.txt qwertycoin-${TAG}/
-            7z a qwertycoin-${LABEL}-${TAG}.zip qwertycoin-${TAG}/
-            echo ::set-output name=binary_path::qwertycoin-${TAG}
-            echo ::set-output name=artifact_name::qwertycoin-${LABEL}-${TAG}
-            echo ::set-output name=file_name::qwertycoin-${LABEL}-${TAG}.zip
+            rm -rf Diamoneum-${TAG}
+            mkdir Diamoneum-${TAG}
+            cp *.exe Diamoneum-${TAG}/
+            cp ../../../LICENSE.txt Diamoneum-${TAG}/
+            7z a Diamoneum-${LABEL}-${TAG}.zip Diamoneum-${TAG}/
+            echo ::set-output name=binary_path::Diamoneum-${TAG}
+            echo ::set-output name=artifact_name::Diamoneum-${LABEL}-${TAG}
+            echo ::set-output name=file_name::Diamoneum-${LABEL}-${TAG}.zip
 
 
       # Upload to GH Release

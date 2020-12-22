@@ -17,12 +17,12 @@ Release Notes 6.0.0
 - Several bug fixes
 
 Release Notes 5.2.2
-- Fix Bug "Qwertycoind crashes without any message"
+- Fix Bug "Diamoneumd crashes without any message"
 
 Release Notes 5.1.3
 - Release 5.1.3 due to massive network problems in case of trying to switch to an alternative chain. The primary nodes detected this issue and blocked all outdated Nodes. To solve this Issues in short time we decided to change net network identifer to ensure that every node uses the same version.
 - This Version code is: 5.1.3.3000 (6db7f2b-g6db7f2b)
-- It's important to update any Pool, Node, Exchange or Wallet to this new Version ast fast as possible. We offer binary images of the latest releases here: https://releases.qwertycoin.org
+- It's important to update any Pool, Node, Exchange or Wallet to this new Version ast fast as possible. We offer binary images of the latest releases here: https://releases.diamoneum.xyz
 - If you would like to compile yourself, read the project "How to Compile" Details.
 
 Release Notes 5.0.1
@@ -40,8 +40,8 @@ Release Notes 5.0.0
 - additional infos coming soon...
 
 Release Notes 4.0.0
-Qwertycoin plan his second stage for the upcoming hard fork to heavy algorithm
-- New network identifiers to ensure that every single Users, Poolowner, Exchange update their Qwertycoin Software
+Diamoneum plan his second stage for the upcoming hard fork to heavy algorithm
+- New network identifiers to ensure that every single Users, Poolowner, Exchange update their Diamoneum Software
 - Upgrade the core to Cryptonight-Heavy / ASIC Resistant
 - Switch to newest Zawy LWMA-2 Difficulty algorithm
 - Upgrade Blocksize for creating larger Blocks and Transactions
@@ -57,14 +57,14 @@ Qwertycoin plan his second stage for the upcoming hard fork to heavy algorithm
 - New branding
 
 Release Notes 2.1.0
-Qwertycoin has a Hardfork @ Block Height 8473
+Diamoneum has a Hardfork @ Block Height 8473
 -Snapshot on Height 8473
 -New Network Identifiers, New P2P Trust Key and new Set of Masternodes.
 
 Realse Notes 2.2.0
 Changed to Blocksize Increase on height 60,000 to 1,000,000 instead of 10,000
 
-Release notes Qwertycoin 1.8.0
+Release notes Diamoneum 1.8.0
 
 - Android platform support
 - Added logging to blockchain synchronizer
@@ -84,13 +84,13 @@ Release notes Qwertycoin 1.8.0
 
 Release Notes 1.5.6
 
-Qwertycoin project is moved to GitHub
+Diamoneum project is moved to GitHub
 
 Core Update @ Block 30,600
 
 March 12, 2018
 
-Release notes Qwertycoin 1.8.0:
+Release notes Diamoneum 1.8.0:
 
 Android platform support
 Added logging to blockchain synchronizer
@@ -109,11 +109,11 @@ Additional validation and attribution
 ------------------
 
 
-Qwertycoin Wallet v3.0.0 & Hard fork @ Height 88,000
+Diamoneum Wallet v3.0.0 & Hard fork @ Height 88,000
 
 June 7, 2018
 
-Qwertycoin v3 Wallets are released!
+Diamoneum v3 Wallets are released!
 Download now: QWC Wallet
 Hard fork at block height 88,000! Here’s a changelog:
 + Increase pending Transaction Alt block lifetime to 48 hours
@@ -128,11 +128,11 @@ Hard fork at block height 88,000! Here’s a changelog:
 --------------
 
 
-Qwertycoin v4 (Diavik)
+Diamoneum v4 (Diavik)
 
 July 10, 2018
 
-New network identifiers to ensure that every single Users, Poolowner, Exchange update their Qwertycoin Software
+New network identifiers to ensure that every single Users, Poolowner, Exchange update their Diamoneum Software
 Upgrade the core to Cryptonight-Heavy / ASIC Resistant ON HEIGHT 110,520
 Upgrade Blocksize for creating larger Blocks and Transactions
 Increase Syncperformance

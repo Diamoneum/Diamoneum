@@ -16,7 +16,7 @@ about: Create a report to help us improve
 **Hard Drive Size**: <!-- please indicate the size of your hard drive -->
 **Volume Type**: <!-- please indicate FAT32/NTFS/ext3/ext4 -->
 
-### Qwertycoin Build Information
+### Diamoneum Build Information
 
 **Version:** <!-- please indicate the full build number ex. 0.8.0.1269 -->
 **Binary Source:** <!-- please indicate if you compiled the binaries yourself or if you are using pre-compiled binaries please link to the source of those binaries  -->
@@ -29,14 +29,14 @@ cmake -DBUILD_ALL:BOOL=TRUE ..
 cmake --build . --config Release
 ```
 
-**If self compiled, please provide of your Qwertycoin CMake output at the default verbosity**:
+**If self compiled, please provide of your Diamoneum CMake output at the default verbosity**:
 ```
 Please insert your default verbosity CMake output here
 ```
 
 ### Issue Report
 
-**Binary Reported:** <!-- does this issue affect simplewallet, qwertycoind, walletd, miner? -->
+**Binary Reported:** <!-- does this issue affect simplewallet, Diamoneumd, walletd, miner? -->
 
 #### Expected Behavior
 

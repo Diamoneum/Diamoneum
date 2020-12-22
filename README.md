@@ -1,10 +1,10 @@
 ![image](http://diamoneum.xyz/wp-content/uploads/2020/10/Diamoneum-Logo-Example-1-1.png)
 #### Master Build Status
-[![Build Status](https://github.com/qwertycoin-org/qwertycoin/workflows/Build/badge.svg?branch=master)](https://github.com/qwertycoin-org/qwertycoin/actions)
+[![Build Status](https://github.com/Diamoneum/Diamoneum/workflows/Build/badge.svg?branch=master)](https://github.com/Diamoneum/Diamoneum/actions)
 
 
 #### Development Build Status
-[![Build Status](https://github.com/qwertycoin-org/qwertycoin/workflows/Build/badge.svg?branch=dev)](https://github.com/qwertycoin-org/qwertycoin/actions)
+[![Build Status](https://github.com/Diamoneum/Diamoneum/workflows/Build/badge.svg?branch=dev)](https://github.com/Diamoneum/Diamoneum/actions)
 
 
 # Table of contents
@@ -176,48 +176,45 @@ cmake --build . --config Release
 ## Donate <a name="donate"></a>
 
 ```
-DIAM: diamZCEMyoggGgngE7Sh8QAaQEvFPw8HXAj5SQh7sEwoEc3FsnSZwFZ9nMfRWVc6hFdjCASNGGxPnCeEt7WKbwYC1WCnXWheBV
+DIAM: diamowieNXVVxGW2GbJERHgawnfvWokZ6bHnzYC2w67KMyV1BiT9Aux6JzY1wg4HmJHMoYJQdyj5LHKKEsFP2FBsA5aimMoQ46
 ```
 ```
-BTC: 1DkocMNiqFkbjhCmG4sg9zYQbi4YuguFWw
+BTC: 16GLbf566NGF3893gZmB9hY4HiaNbh3GVe
 ```
 ```
-ETH: 0xA660Fb28C06542258bd740973c17F2632dff2517
+ETH: 0xA6792e1704d2A77A15d504c98e006bc7d939Ee0
 ```
 ```
-BCH: qz975ndvcechzywtz59xpkt2hhdzkzt3vvt8762yk9
+XMR: 83LixYjeNejZFiGzDWRoLS6qjbtHUxLJUHh9KwsmWsiqPi3tu8qcP7w2veX3xm3c7t6AVgy3m7EKXSugmt3VxhLRGdAjpE4
 ```
 ```
-XMR: 47gmN4GMQ17Veur5YEpru7eCQc5A65DaWUThZa9z9bP6jNMYXPKAyjDcAW4RzNYbRChEwnKu1H3qt9FPW9CnpwZgNscKawX
-```
-```
-ETN: etnkJXJFqiH9FCt6Gq2HWHPeY92YFsmvKX7qaysvnV11M796Xmovo2nSu6EUCMnniqRqAhKX9AQp31GbG3M2DiVM3qRDSQ5Vwq
+ETN: etnjzZn6KVHHgZf7MDrcYcCg7tVuKN1vYSqjQoYD4sF1hGnGMK5FKtc4TH5ytggf4q2L19kEfxQtKMx21fxhqEyiA97Nzurpkk
 ```
 
 ### Useful Links <a name="usefullinks"></a>
 <table>
-<tr><td>Website</td><td>https://qwertycoin.org</td></tr>
-<tr><td>Bitcointalk ANN</td><td>https://bitcointalk.org/index.php?topic=2881418.0</td></tr>
-<tr><td>Explorer</td><td>https://explorer.qwertycoin.org</td></tr>
-<tr><td>Pool Explorer</td><td>https://explorer.qwertycoin.org/#network</td></tr>
-<tr><td>Node Map</td><td>https://nodes.qwertycoin.org</td></tr>
-<tr><td>Wallets</td><td>https://releases.qwertycoin.org</td></tr>
-<tr><td>Web Wallet</td><td>https://myqwertycoin.com</td></tr>
-<tr><td>Masternode Setup</td><td>https://github.com/qwertycoin-org/qwertycoin/wiki</td></tr>
+<tr><td>Website</td><td>https://diamoneum.xyz</td></tr>
+<tr><td>Bitcointalk ANN</td><td>Coming Soon</td></tr>
+<tr><td>Explorer</td><td>https://explorer.diamoneum.xyz</td></tr>
+<tr><td>Pool Explorer</td><td>https://explorer.diamoneum.xyz/#network</td></tr>
+<tr><td>Node Map</td><td>https://nodes.diamoneum.xyz</td></tr>
+<tr><td>Wallets</td><td>https://releases.diamoneum.xyz</td></tr>
+<tr><td>Web Wallet</td><td>https://wallet.diamoneum.xyz</td></tr>
+<tr><td>Masternode Setup</td><td>https://github.com/Diamoneum/Diamoneum/wiki</td></tr>
 <tr><td>Blockfolio</td><td>https://blockfolio.com/#get-app</td></tr>
-<tr><td>CoinGecko</td><td>https://www.coingecko.com/en/coins/qwertycoin</td></tr>
+<tr><td>CoinGecko</td><td>https://www.coingecko.com/en/coins/Diamoneum</td></tr>
 <tr><td>Delta</td><td>https://delta.app</td></tr>
-<tr><td>Discord</td><td>https://qwertycoin.org/discord</td></tr>
-<tr><td>Twitter</td><td>https://twitter.com/Qwertycoin_QWC</td></tr>
+<tr><td>Discord</td><td>https://discord.gg/YVwYZ6Z</td></tr>
+<tr><td>Facebook</td><td>https://www.facebook.com/Diamoneum.Diam</td></tr>
 </table>
 
 #### Thanks <a name="thanks"></a>
 
-Cryptonote Developers, Bytecoin Developers, Monero Developers, Karbo Developers, Qwertycoin Community, Diamoneum Community
+Cryptonote Developers, Bytecoin Developers, Monero Developers, Karbo Developers, Diamoneum Community, Diamoneum Community
 
 ### Copypasta for license when editing files  <a name="copypasta"></a>
 
-Hi Diamoneum contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/config/CryptoNoteConfig.h](https://github.com/qwertycoin-org/qwertycoin/blob/master/src/config/CryptoNoteConfig.h) for an example.
+Hi Diamoneum contributor, thanks for forking and sending back Pull Requests. Extensive docs about contributing are in the works or elsewhere. For now this is the bit we need to get into all the files we touch. Please add it to the top of the files, see [src/config/CryptoNoteConfig.h](https://github.com/Diamoneum/Diamoneum/blob/master/src/config/CryptoNoteConfig.h) for an example.
 
 ```
 # Copyright 2020-2020 (c) The Diamoneum Team.

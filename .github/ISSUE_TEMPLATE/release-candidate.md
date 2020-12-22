@@ -5,7 +5,7 @@ about: The purpose of this template is to provide a reproducible testing process
 
 ---
 
-# Qwertycoin <!-- Insert semver # including build number here --> Release Candidate Test Log
+# Diamoneum <!-- Insert semver # including build number here --> Release Candidate Test Log
 
 Build from: <!-- link to release candidate branch -->
 
@@ -20,7 +20,7 @@ Binaries for Testing:
 - [ ] `Version.h.in` updated to correct semver value
 - [ ] Release Notes Prepared (<!-- link to proposed copy of release notes -->)
 
-### Qwertycoind Tests
+### Diamoneum Tests
 - Daemon connects to local DB
   - [ ] Windows
   - [ ] Linux
@@ -58,7 +58,7 @@ Binaries for Testing:
   - [ ] Linux
   - [ ] MacOS
 
-### Qwertycoin simplewallet Tests
+### Diamoneum simplewallet Tests
 - Connect to local daemon
   - [ ] Windows
   - [ ] Linux
@@ -96,7 +96,7 @@ Binaries for Testing:
   - [ ] Linux
   - [ ] MacOS
 
-### Qwertycoin walletd Tests
+### Diamoneum walletd Tests
 - Connect to local daemon
   - [ ] Windows
   - [ ] Linux
