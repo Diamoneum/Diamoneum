@@ -240,7 +240,7 @@ const std::string GOVERNANCE_VIEW_SECRET_KEY                 = "331b2f43d158857c
 
 const char *const SEED_NODES[] = {
     "172.237.125.54:57575",
-    "172.236.20.25:57575"
+    "172.236.21.37:57575"
 };
 
 } // namespace CryptoNote
