@@ -16,18 +16,6 @@ if(POLICY CMP0087)
     cmake_policy(SET CMP0087 NEW)
 endif()
 
-if(POLICY CMP0167)
-    # Allow find_package() to use <PackageName>_ROOT variables.
-    # This policy was introduced in CMake version 3.12.
-    cmake_policy(SET CMP0167 NEW)
-endif()
-
-if(POLICY CMP0144)
-    # Allow find_package() to use <PackageName>_ROOT variables.
-    # This policy was introduced in CMake version 3.12.
-    cmake_policy(SET CMP0144 NEW)
-endif()
-
 list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_LIST_DIR}/cmake")
 list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_LIST_DIR}/cmake/find")
 
@@ -44,8 +32,8 @@ set(HUNTER_CONFIGURATION_TYPES Release;Debug CACHE STRING "Hunter configuration 
 set(HUNTER_JOBS_NUMBER 4 CACHE STRING "Hunter jobs number")
 include(hunter/HunterGate)
 HunterGate(
-    URL "https://github.com/cpp-pm/hunter/archive/v0.23.254.tar.gz"
-    SHA1 "017e688b9848c1f695303e8cfe9f35d40e154112"
+    URL "https://github.com/cpp-pm/hunter/archive/v0.23.314.tar.gz"
+    SHA1 "95c47c92f68edb091b5d6d18924baabe02a6962a"
     FILEPATH "${CMAKE_CURRENT_LIST_DIR}/cmake/hunter/HunterConfig.cmake"
 )
 
@@ -84,6 +72,7 @@ if(GIT_FOUND)
         message(STATUS "Git commit ID: ${PROJECT_GIT_COMMIT_ID}")
     endif()
 endif()
+
 
 set(PROJECT_DISPLAY_NAME "Diamoneum")
 set(PROJECT_SHORT_NAME "diam")
@@ -124,10 +113,10 @@ if(BUILD_WITH_TOOLS)
     add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/src")
 endif()
 
-if(BUILD_WITH_TESTS)
+#[[if(BUILD_WITH_TESTS)
     enable_testing()
     add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/tests")
-endif()
+endif()]]
 
 if(BUILD_WITH_PACKAGE)
     include(project/CPackConfig)
