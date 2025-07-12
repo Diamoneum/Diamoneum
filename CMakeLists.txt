@@ -16,6 +16,12 @@ if(POLICY CMP0087)
     cmake_policy(SET CMP0087 NEW)
 endif()
 
+if(POLICY CMP0167)
+    # Allow find_package() to use <PackageName>_ROOT variables.
+    # This policy was introduced in CMake version 3.12.
+    cmake_policy(SET CMP0167 NEW)
+endif()
+
 list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_LIST_DIR}/cmake")
 list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_LIST_DIR}/cmake/find")
 
