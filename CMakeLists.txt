@@ -104,7 +104,7 @@ set_directory_properties(PROPERTIES EP_BASE "${CMAKE_CURRENT_BINARY_DIR}/_Extern
 include(ExternalProject)
 set(FETCHCONTENT_BASE_DIR "${CMAKE_CURRENT_BINARY_DIR}/_FetchContent" CACHE PATH "FetchContent" FORCE)
 include(FetchContent)
-include(cmake/external/Boost)
+include(external/Boost)
 include(external/Breakpad)
 include(external/codecov)
 include(external/GTest)
