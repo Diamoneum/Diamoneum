@@ -173,7 +173,7 @@ const uint32_t GOVERNANCE_HEIGHT_END                         = 4000000;
 
 const char     CRYPTONOTE_NAME[]                             = "Diamoneum";
 const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001c4918df49404029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101b553f7a21b637cde0b73901345b8394a99dda206e02a1c860ed2abf637d0f6fd";
-const char     DNS_CHECKPOINTS_HOST[]                        = "checkpoints.diamoneum.xyz";
+const char     DNS_CHECKPOINTS_HOST[]                        = "checkpoints.diamoneum.com";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -225,7 +225,7 @@ const uint32_t P2P_IP_FAILS_BEFORE_BLOCK                     = 10;
 const uint32_t P2P_IDLE_CONNECTION_KILL_INTERVAL             = (5 * 60);      //5 minutes
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "deaddeadbeef04d37a9499c67ccb730dc4734950f414cdb332b28c5ce764beaf";
 
-const char        LATEST_VERSION_URL[]                       = "https://releases.diamoneum.xyz";
+const char        LATEST_VERSION_URL[]                       = "https://releases.diamoneum.com";
 const std::string LICENSE_URL                                = "https://github.com/Diamoneum/Diamoneum/blob/master/LICENSE.txt";
 
 /* Modules */
