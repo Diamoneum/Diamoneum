@@ -80,7 +80,7 @@ const std::string windowsAsciiArt =
         "                                                          	\n";
 
 const std::string nonWindowsAsciiArt =
-        "\n              			                       \n"        
+        "\n              			                        \n"        
 	"    ____  _                                                	\n"
 	"   / __ \(_)___ _____ ___  ____  ____  ___  __  ______ ___ 	\n"
 	"  / / / / / __ `/ __ `__ \/ __ \/ __ \/ _ \/ / / / __ `__ \	\n"
@@ -149,7 +149,7 @@ const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 /*!
     Where can your users contact you for support? E.g. discord
 */
-const std::string contactLink = "http://chat.diamoneum.xyz";
+const std::string contactLink = "http://chat.diamoneum.com";
 
 /*!
     The number of decimals your coin has
