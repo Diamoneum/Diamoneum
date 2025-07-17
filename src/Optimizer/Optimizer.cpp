@@ -20,7 +20,6 @@
 #include <boost/optional.hpp>
 #include <boost/program_options.hpp>
 
-#include <Breakpad/Breakpad.h>
 #include <Common/CommandLine.h>
 #include <Common/JsonValue.h>
 #include <Common/StringTools.h>
@@ -335,7 +334,6 @@ bool run_optimizer(po::variables_map &vm)
 
 int main(int argc, char *argv[])
 {
-    Diamoneum::Breakpad::ExceptionHandler exceptionHandler;
 
     po::options_description desc_general("General options");
     command_line::add_arg(desc_general, command_line::arg_help);

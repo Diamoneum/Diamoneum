@@ -58,7 +58,6 @@
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/utility/value_init.hpp>
-#include <Breakpad/Breakpad.h>
 #include <Common/CommandLine.h>
 #include <Common/SignalHandler.h>
 #include <Common/StringTools.h>
@@ -3501,7 +3500,6 @@ int main(int argc, char *argv[])
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
-    Diamoneum::Breakpad::ExceptionHandler exceptionHandler;
 
     setbuf(stdout, NULL);
 

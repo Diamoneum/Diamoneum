@@ -10,11 +10,6 @@ environment:
         BOOST_ROOT: "C:/Libraries/boost_1_70_0"
         BOOST_LIBRARYDIR: "C:/Libraries/boost_1_70_0/lib64-msvc-14.1"
     matrix:
-        - Purpose: "WindowsDebugBuild"
-          DIAM_GENERATOR_NAME: "Visual Studio 16 2019"
-          DIAM_BUILD_TYPE: "Debug"
-          DIAM_TOOLCHAIN_FILE_NAME: "cmake/polly/vs-16-2019-win64.cmake"
-          DIAM_TESTS_REGEXP: "NONE"
         - Purpose: "WindowsReleaseBuild"
           DIAM_GENERATOR_NAME: "Visual Studio 16 2019"
           DIAM_BUILD_TYPE: "Release"
@@ -29,6 +24,7 @@ build_script:
     - cd build
     - >
         cmake -G "%DIAM_GENERATOR_NAME%"
+        -DCMAKE_SYSTEM_VERSION="10.0.18362.0"
         -DCMAKE_BUILD_TYPE=%DIAM_BUILD_TYPE%
         -DCMAKE_TOOLCHAIN_FILE=%DIAM_TOOLCHAIN_FILE_NAME%
         -DBUILD_ALL:BOOL=TRUE
@@ -38,7 +34,7 @@ build_script:
     - cpack -C %DIAM_BUILD_TYPE%
 
 artifacts:
-    - path: build\*\Diamoneum-*.exe
+    - path: build\*\diamoneum-*.exe
       name: Releases
 
 deploy:
@@ -46,9 +42,9 @@ deploy:
     provider: GitHub
     auth_token:
         secure: "2+Ji3AkIi/6n3bNzeQNvr7ZKetnvNC/K5czk1iDU5OQHiozVan1ksMw3Nk1GTssO"
-    artifact: /Diamoneum-.*\.exe/
+    artifact: /diamoneum-.*\.exe/
     draft: true
     prerelease: true
     on:
         APPVEYOR_REPO_TAG: true
-        DIAM_BUILD_TYPE: "Release"
+        QWC_BUILD_TYPE: "Release"

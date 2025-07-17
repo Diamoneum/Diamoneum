@@ -33,7 +33,7 @@ endif()
 
 set(DiamoneumTools_ConnectivityTool_LIBS
     Boost::program_options
-    DiamoneumFramework::Breakpad
+    #DiamoneumFramework::Breakpad
     DiamoneumFramework::Common
     DiamoneumFramework::CryptoNoteCore
     DiamoneumFramework::P2p
@@ -68,7 +68,7 @@ endif()
 
 set(DiamoneumTools_Daemon_LIBS
     Boost::filesystem
-    DiamoneumFramework::Breakpad
+    #DiamoneumFramework::Breakpad
     DiamoneumFramework::Common
     DiamoneumFramework::CryptoNoteCore
     DiamoneumFramework::Global
@@ -108,7 +108,7 @@ endif()
 
 set(DiamoneumTools_Miner_LIBS
     Boost::program_options
-    DiamoneumFramework::Breakpad
+    #DiamoneumFramework::Breakpad
     DiamoneumFramework::Common
     DiamoneumFramework::CryptoNoteCore
     DiamoneumFramework::Logging
@@ -142,7 +142,7 @@ endif()
 set(DiamoneumTools_Optimizer_LIBS
     Boost::filesystem
     Boost::program_options
-    DiamoneumFramework::Breakpad
+    #DiamoneumFramework::Breakpad
     DiamoneumFramework::Common
     DiamoneumFramework::CryptoNoteCore
     DiamoneumFramework::Global
@@ -185,7 +185,7 @@ endif()
 set(DiamoneumTools_PaymentGateService_LIBS
     Boost::filesystem
     Boost::program_options
-    DiamoneumFramework::Breakpad
+    #DiamoneumFramework::Breakpad
     DiamoneumFramework::Common
     DiamoneumFramework::CryptoNoteCore
     DiamoneumFramework::Global
@@ -219,7 +219,7 @@ endif()
 set(DiamoneumTools_SimpleWallet_LIBS
     Boost::filesystem
     Boost::program_options
-    DiamoneumFramework::Breakpad
+    #DiamoneumFramework::Breakpad
     DiamoneumFramework::Common
     DiamoneumFramework::Global
     DiamoneumFramework::Logging

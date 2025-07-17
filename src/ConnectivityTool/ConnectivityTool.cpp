@@ -19,7 +19,6 @@
 
 #include <boost/optional.hpp>
 #include <boost/program_options.hpp>
-#include <Breakpad/Breakpad.h>
 #include <Common/CommandLine.h>
 #include <Common/StringTools.h>
 #include <crypto/crypto.h>
@@ -414,7 +413,7 @@ bool generate_and_print_keys()
 
 int main(int argc, char *argv[])
 {
-    Diamoneum::Breakpad::ExceptionHandler exceptionHandler;
+   
 
     // Declare the supported options.
     po::options_description desc_general("General options");

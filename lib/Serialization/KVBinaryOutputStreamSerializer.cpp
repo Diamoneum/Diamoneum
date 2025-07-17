@@ -21,6 +21,7 @@
 #include <Common/StreamTools.h>
 #include <Serialization/KVBinaryCommon.h>
 #include <Serialization/KVBinaryOutputStreamSerializer.h>
+#include <limits>
 
 using namespace Common;
 using namespace CryptoNote;

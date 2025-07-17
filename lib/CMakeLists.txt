@@ -39,7 +39,7 @@ set(DiamoneumFramework_INCLUDE_DIRS ${DiamoneumFramework_INCLUDE_DIRS} PARENT_SC
 
 set(DiamoneumFramework_LIBS
     DiamoneumFramework_BlockchainExplorer
-    DiamoneumFramework_Breakpad
+    #DiamoneumFramework_Breakpad
     DiamoneumFramework_Common
     DiamoneumFramework_Crypto
     DiamoneumFramework_CryptoNoteCore
@@ -86,37 +86,6 @@ add_library(DiamoneumFramework::BlockchainExplorer ALIAS DiamoneumFramework_Bloc
 target_include_directories(DiamoneumFramework_BlockchainExplorer PRIVATE ${DiamoneumFramework_INCLUDE_DIRS})
 target_link_libraries(DiamoneumFramework_BlockchainExplorer PRIVATE ${DiamoneumFramework_BlockchainExplorer_LIBS})
 
-# DiamoneumFramework::Breakpad
-
-set(DiamoneumFramework_Breakpad_SOURCES
-    ${Breakpad_SOURCES} # Compile Google Brekapad sources as part of this lib
-    "${CMAKE_CURRENT_LIST_DIR}/Breakpad/Breakpad.cpp"
-    "${CMAKE_CURRENT_LIST_DIR}/Breakpad/Breakpad.h"
-)
-
-set(DiamoneumFramework_Breakpad_LIBS
-    DiamoneumFramework::Global
-)
-
-if(APPLE)
-    find_library(CoreFoundationLibrary CoreFoundation)
-    find_library(CFNetworkLibrary CFNetwork)
-    set(DiamoneumFramework_Breakpad_LIBS
-        ${DiamoneumFramework_Breakpad_LIBS}
-        ${CoreFoundationLibrary}
-        ${CFNetworkLibrary}
-    )
-endif()
-
-add_library(DiamoneumFramework_Breakpad STATIC ${DiamoneumFramework_Breakpad_SOURCES})
-add_library(DiamoneumFramework::Breakpad ALIAS DiamoneumFramework_Breakpad)
-target_include_directories(DiamoneumFramework_Breakpad PRIVATE ${DiamoneumFramework_INCLUDE_DIRS})
-target_link_libraries(DiamoneumFramework_Breakpad PRIVATE ${DiamoneumFramework_Breakpad_LIBS})
-
-if(WIN32)
-    # Fix for "cannot convert argument 1 from 'const wchar_t *' to 'LPCSTR'" and similar issues
-    target_compile_definitions(DiamoneumFramework_Breakpad PRIVATE -DUNICODE -D_UNICODE)
-endif()
 
 # DiamoneumFramework::Common
 

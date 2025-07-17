@@ -70,7 +70,8 @@ const uint8_t TX_EXTRA_PUBKEY_IDENTIFIER = 0x01;
 */
 const uint8_t TX_EXTRA_NONCE_IDENTIFIER = 0x02;
 
-const std::string windowsAsciiArt =
+const std::string windowsAsciiArt = "123";
+/*
         "\n                                                	        \n"
 	"    ____  _                                                	\n"
 	"   / __ \(_)___ _____ ___  ____  ____  ___  __  ______ ___ 	\n"
@@ -78,15 +79,18 @@ const std::string windowsAsciiArt =
 	" / /_/ / / /_/ / / / / / / /_/ / / / /  __/ /_/ / / / / / /	\n"
 	"/_____/_/\__,_/_/ /_/ /_/\____/_/ /_/\___/\__,_/_/ /_/ /_/ 	\n"          
         "                                                          	\n";
-
-const std::string nonWindowsAsciiArt =
+*/
+  
+const std::string nonWindowsAsciiArt = "123";
+/*
         "\n              			                       \n"        
 	"    ____  _                                                	\n"
 	"   / __ \(_)___ _____ ___  ____  ____  ___  __  ______ ___ 	\n"
 	"  / / / / / __ `/ __ `__ \/ __ \/ __ \/ _ \/ / / / __ `__ \	\n"
 	" / /_/ / / /_/ / / / / / / /_/ / / / /  __/ /_/ / / / / / /	\n"
-	"/_____/_/\__,_/_/ /_/ /_/\____/_/ /_/\___/\__,_/_/ /_/ /_/ 	\n"                                                		"                                                             \n";
-
+	"/_____/_/\__,_/_/ /_/ /_/\____/_/ /_/\___/\__,_/_/ /_/ /_/     \n"	
+	"                                                               \n";
+*/
 /*!
     Windows has some characters it won't display in a terminal. If your ascii
     art works fine on Windows and Linux terminals, just replace 'asciiArt' with

@@ -132,13 +132,15 @@ struct EllipticCurveScalar {
 
     constexpr static T max() {
       return (std::numeric_limits<T>::max)();
-    }
+    }s=
 #else
-    static T(min)() {
+    //static T(min)
+    constexpr static T(min)() {
       return (std::numeric_limits<T>::min)();
     }
-
-    static T(max)() {
+    
+    //static T(maz)
+    constexpr static T(max)() {
       return (std::numeric_limits<T>::max)();
     }
 #endif

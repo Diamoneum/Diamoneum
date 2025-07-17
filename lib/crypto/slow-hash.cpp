@@ -20,6 +20,7 @@
 #include <new>
 
 #include "hash.h"
+#include <exception>
 
 #ifdef _WIN32
 #include <Windows.h>

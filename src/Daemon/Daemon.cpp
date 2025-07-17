@@ -26,7 +26,6 @@
 #include <Common/StringTools.h>
 #include <Common/PathTools.h>
 #include <crypto/hash.h>
-#include <Breakpad/Breakpad.h>
 #include <CryptoNoteCore/CryptoNoteTools.h>
 #include <CryptoNoteCore/Core.h>
 #include <CryptoNoteCore/CoreConfig.h>
@@ -214,7 +213,6 @@ int main(int argc, char *argv[])
     _CrtSetDbgFlag ( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
 #endif
 
-    Diamoneum::Breakpad::ExceptionHandler exceptionHandler;
 
     LoggerManager logManager;
     LoggerRef logger(logManager, "daemon");

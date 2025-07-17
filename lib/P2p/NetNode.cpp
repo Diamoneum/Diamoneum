@@ -76,7 +76,9 @@ void addPortMapping(Logging::LoggerRef &logger, uint32_t port)
     UPNPUrls urls;
     IGDdatas igdData;
     char lanAddress[64];
-    result = UPNP_GetValidIGD(deviceList, &urls, &igdData, lanAddress, sizeof lanAddress);
+    char extIpAddr[64];
+    result = UPNP_GetValidIGD(deviceList, &urls, &igdData, lanAddress, sizeof lanAddress, extIpAddr, sizeof extIpAddr);
+    
     freeUPNPDevlist(deviceList);
     if (result != 0) {
         if (result == 1) {
